@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BasicPokemonCount.Text" xml:space="preserve">
+    <value>たねポケモンの数</value>
+  </data>
+  <data name="CheckDeck_AceSpec" xml:space="preserve">
+    <value>「ACE SPEC」の数が１枚を超えました</value>
+  </data>
+  <data name="CheckDeck_NoBasic" xml:space="preserve">
+    <value>たねポケモンがない</value>
+  </data>
+  <data name="CheckDeck_SameName" xml:space="preserve">
+    <value>名前が「{0}」のカードが{1}枚を超えました</value>
+  </data>
+  <data name="Dialog_DeckChangedText" xml:space="preserve">
+    <value>デッキの変更を保存しますか？</value>
+  </data>
+  <data name="Dialog_DeckChangedTitle" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="FindSameFamilyAppBarButton.Label" xml:space="preserve">
+    <value>同じ進化系統のポケモンを探す</value>
+  </data>
+  <data name="FindSameNameAppBarButton.Label" xml:space="preserve">
+    <value>同じ名前のカードを探す</value>
+  </data>
+  <data name="FindSamePokemonAppBarButton.Label" xml:space="preserve">
+    <value>同じナンバーのポケモンを探す</value>
+  </data>
+  <data name="FirstDrawTextBlock.Text" xml:space="preserve">
+    <value>最初のドロー</value>
+  </data>
+  <data name="GroupHeader_Energy.Text" xml:space="preserve">
+    <value>エネルギー</value>
+  </data>
+  <data name="GroupHeader_Pokemon.Text" xml:space="preserve">
+    <value>ポケモン</value>
+  </data>
+  <data name="GroupHeader_Total.Text" xml:space="preserve">
+    <value>デッキの枚数</value>
+  </data>
+  <data name="GroupHeader_Trainer.Text" xml:space="preserve">
+    <value>トレーナー</value>
+  </data>
+  <data name="Info_CardList.Text" xml:space="preserve">
+    <value>カードリスト：</value>
+  </data>
+  <data name="Info_Comments.Text" xml:space="preserve">
+    <value>コメント：</value>
+  </data>
+  <data name="Info_Creator.Text" xml:space="preserve">
+    <value>作成者：</value>
+  </data>
+  <data name="Info_DeckDesc.Text" xml:space="preserve">
+    <value>説明：</value>
+  </data>
+  <data name="Info_DeckName.Text" xml:space="preserve">
+    <value>デッキ名：</value>
+  </data>
+  <data name="InitialHandsTextBlock.Text" xml:space="preserve">
+    <value>最初の手札</value>
+  </data>
+  <data name="NewDeckAppBatButton.Label" xml:space="preserve">
+    <value>新規</value>
+  </data>
+  <data name="OpenDeckAppBatButton.Label" xml:space="preserve">
+    <value>開く</value>
+  </data>
+  <data name="PivotHeader_Deck.Header" xml:space="preserve">
+    <value>デッキ</value>
+  </data>
+  <data name="PivotHeader_Info.Header" xml:space="preserve">
+    <value>データ</value>
+  </data>
+  <data name="PivotHeader_Preview.Header" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="PivotHeader_Simulate.Header" xml:space="preserve">
+    <value>シミュレーション</value>
+  </data>
+  <data name="Preview_CaptureButton.Label" xml:space="preserve">
+    <value>画像をコピー</value>
+  </data>
+  <data name="Preview_ChangeBackgroundButton.Label" xml:space="preserve">
+    <value>背景を変更</value>
+    <comment>-</comment>
+  </data>
+  <data name="Preview_CountedLayoutButton.Label" xml:space="preserve">
+    <value>集計表示</value>
+  </data>
+  <data name="Preview_StackedLayoutButton.Label" xml:space="preserve">
+    <value>重ねて表示</value>
+  </data>
+  <data name="Preview_TiledLayoutButton.Label" xml:space="preserve">
+    <value>並べて表示</value>
+  </data>
+  <data name="PrizeCardsTextBlock.Text" xml:space="preserve">
+    <value>サイド</value>
+  </data>
+  <data name="SaveAsMenuFlyoutItem.Text" xml:space="preserve">
+    <value>名前を付けて保存...</value>
+  </data>
+  <data name="SaveDeckMenuFlyoutItem.Text" xml:space="preserve">
+    <value>デッキを保存...</value>
+  </data>
+  <data name="SaveDeckTextBlock.Text" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="SaveTemplateMenuFlyoutItem.Text" xml:space="preserve">
+    <value>テンプレートを保存...</value>
+  </data>
+  <data name="Simulate_DealAppBarButton.Label" xml:space="preserve">
+    <value>配る</value>
+  </data>
+  <data name="StartProbability.Text" xml:space="preserve">
+    <value>最初の手札でたねを引く確率</value>
+  </data>
+</root>

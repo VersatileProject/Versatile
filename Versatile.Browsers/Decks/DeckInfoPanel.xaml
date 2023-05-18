@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="Versatile.Browsers.Decks.DeckInfoPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Versatile.Browsers.Decks"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid
+        ColumnSpacing="16"
+        >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".6*" />
+            <ColumnDefinition Width=".4*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Style="{StaticResource InfoLabelStyle}"
+            x:Uid="/Versatile.Localization/DeckEditor/Info_DeckName"
+            />
+
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="{x:Bind ViewModel.DeckName, Mode=TwoWay}"
+            />
+
+        
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Style="{StaticResource InfoLabelStyle}"
+            x:Uid="/Versatile.Localization/DeckEditor/Info_DeckDesc"
+            />
+
+        <TextBox
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            Text="{x:Bind ViewModel.Description, Mode=TwoWay}"
+            />
+
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="0"
+            Style="{StaticResource InfoLabelStyle}"
+            x:Uid="/Versatile.Localization/DeckEditor/Info_Creator"
+            />
+
+        <TextBox
+            Grid.Row="5"
+            Grid.Column="0"
+            Text="{x:Bind ViewModel.Creator, Mode=TwoWay}"
+            />
+
+        
+        <TextBlock
+            Grid.Row="6"
+            Grid.Column="0"
+            Style="{StaticResource InfoLabelStyle}"
+            x:Uid="/Versatile.Localization/DeckEditor/Info_Comments"
+            />
+
+        <TextBox
+            Grid.Row="7"
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            Text="{x:Bind ViewModel.Comments, Mode=TwoWay}"
+            />
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="1"
+            Style="{StaticResource InfoLabelStyle}"
+            x:Uid="/Versatile.Localization/DeckEditor/Info_CardList"
+            />
+
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.RowSpan="7"
+            IsReadOnly="True"
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            Text="{x:Bind ViewModel.CardListText, Mode=OneWay}"
+            />
+
+        
+    </Grid>
+</UserControl>

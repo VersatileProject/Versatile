@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="Versatile.Plays.Views.PlayerPlaymat"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Versatile.Plays.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:Versatile.CommonUI.Converters"
+    xmlns:viewmodels="using:Versatile.Plays.ViewModels"
+    Width="940"
+    Height="380"
+    mc:Ignorable="d">
+    
+    <UserControl.Resources>
+        <MenuFlyout x:Name="ChooseMenuFlyout" >
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_Choose" Text="" Click="ChooseButton_Click" FontWeight="Bold" />
+        </MenuFlyout>
+
+        <MenuFlyout x:Name="MyDeckMenuFlyout" Opening="MyDeckMenuFlyout_Opening">
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_Deck_DrawCard" Click="DeckDrawButton_Click" FontWeight="Bold" />
+            <MenuFlyoutSubItem x:Name="DeckDrawMoreMenu" x:Uid="/Versatile.Localization/Battle/Playmat_Deck_DrawCards">
+                <MenuFlyoutItem Text="2" Click="DeckDrawMoreButton_Click" MinWidth="80" Tag="2" />
+                <MenuFlyoutItem Text="3" Click="DeckDrawMoreButton_Click" Tag="3" />
+                <MenuFlyoutItem Text="4" Click="DeckDrawMoreButton_Click" Tag="4" />
+                <MenuFlyoutItem Text="5" Click="DeckDrawMoreButton_Click" Tag="5" />
+                <MenuFlyoutItem Text="6" Click="DeckDrawMoreButton_Click" Tag="6" />
+                <MenuFlyoutItem Text="7" Click="DeckDrawMoreButton_Click" Tag="7" />
+                <MenuFlyoutItem Text="8" Click="DeckDrawMoreButton_Click" Tag="8" />
+            </MenuFlyoutSubItem>
+            <MenuFlyoutSeparator/>
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_Deck_View"  Click="ViewDeck_Click" />
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_Deck_Shuffle" Click="ShuffleDeck_Click" />
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_Deck_Reveal" Click="RevealDeck_Click" />
+            <MenuFlyoutSeparator/>
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_Deck_ShowToOpponent"  Click="ShowToOpponent_Click" />
+        </MenuFlyout>
+
+        <MenuFlyout x:Name="MyHandMenuFlyout">
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_Hand_Shuffle" Click="ShuffleHand_Click" FontWeight="Bold" />
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_Hand_Reveal" Click="RevealHand_Click" />
+        </MenuFlyout>
+
+        <MenuFlyout x:Name="MyPrizeMenuFlyout">
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_Prize_Draw" Click="DrawPrize_Click" FontWeight="Bold" />
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_Prize_View" Click="ViewPrize_Click"/>
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_Prize_Reveal" Click="RevealPrize_Click" />
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_Prize_Shuffle" Click="ShufflePrize_Click" />
+        </MenuFlyout>
+
+        <CommandBarFlyout 
+            x:Name="MyPokemonFlyout"
+            AlwaysExpanded="True" 
+            Placement="BottomEdgeAlignedLeft"
+            Opening="MyPokemonFlyout_Opening"
+            >
+
+            <CommandBarFlyout.SecondaryCommands>
+                <AppBarButton x:Uid="/Versatile.Localization/Battle/Playmat_Pokemon_Choose" Label="" Click="ChoosePokemon_Click" />
+
+                <AppBarSeparator />
+
+                <AppBarButton x:Name="ChangeDCMenuItem" x:Uid="/Versatile.Localization/Battle/Playmat_Pokemon_ChangeDC" >
+                    <AppBarButton.Flyout>
+                        <Flyout>
+                            <Grid x:Name="DamageCounterGrid">
+                                <Grid.Resources>
+                                    <SolidColorBrush x:Key="ButtonBackground" Color="Transparent"/>
+                                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemListMediumColor}"/>
+                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource SystemListLowColor}"/>
+                                    <SolidColorBrush x:Key="ButtonBorderBrush" Color="Transparent"/>
+                                    <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="Transparent"/>
+                                    <SolidColorBrush x:Key="ButtonBorderBrushChecked" Color="Transparent"/>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Height" Value="32"/>
+                                        <Setter Property="Width" Value="48"/>
+                                        <Setter Property="Padding" Value="0"/>
+                                    </Style>
+                                </Grid.Resources>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                            </Grid>
+                        </Flyout>
+                    </AppBarButton.Flyout>
+                </AppBarButton>
+
+                <AppBarButton x:Name="SetStatusMenuItem" x:Uid="/Versatile.Localization/Battle/Playmat_Pokemon_SetStatus" >
+                    <AppBarButton.Flyout>
+                        <CommandBarFlyout>
+                            <CommandBarFlyout.SecondaryCommands>
+                                <AppBarButton Icon="Accept" x:Uid="/Versatile.Localization/Battle/Playmat_Pokemon_SetStatusNormal" x:Name="SetStatusNormalMenuItem" Click="SetStatusNormalMenuItem_Click" />
+                                <AppBarButton Icon="Accept" x:Uid="/Versatile.Localization/Battle/Playmat_Pokemon_SetStatusParalyzed" x:Name="SetStatusParalyzedMenuItem" Click="SetStatusParalyzedMenuItem_Click" />
+                                <AppBarButton Icon="Accept" x:Uid="/Versatile.Localization/Battle/Playmat_Pokemon_SetStatusConfused" x:Name="SetStatusConfusedMenuItem" Click="SetStatusConfusedMenuItem_Click" />
+                                <AppBarButton Icon="Accept" x:Uid="/Versatile.Localization/Battle/Playmat_Pokemon_SetStatusAsleep" x:Name="SetStatusAsleepMenuItem" Click="SetStatusAsleepMenuItem_Click" />
+                                <AppBarSeparator />
+                                <AppBarButton Icon="Accept" x:Uid="/Versatile.Localization/Battle/Playmat_Pokemon_SetStatusPoisoned" x:Name="SetStatusPoisonedMenuItem" Click="SetStatusPoisonedMenuItem_Click" />
+                                <AppBarButton Icon="Accept" x:Uid="/Versatile.Localization/Battle/Playmat_Pokemon_SetStatusBurned" x:Name="SetStatusBurnedMenuItem" Click="SetStatusBurnedMenuItem_Click" />
+                            </CommandBarFlyout.SecondaryCommands>
+                        </CommandBarFlyout>
+                    </AppBarButton.Flyout>
+                </AppBarButton>
+                
+                <AppBarSeparator />
+
+                <AppBarButton x:Name="AbilitiesMenuItem" x:Uid="/Versatile.Localization/Battle/Playmat_Pokemon_Abilities" >
+                    <AppBarButton.Flyout>
+                        <CommandBarFlyout>
+                            <CommandBarFlyout.SecondaryCommands>
+                            </CommandBarFlyout.SecondaryCommands>
+                        </CommandBarFlyout>
+                    </AppBarButton.Flyout>
+                </AppBarButton>
+                
+            </CommandBarFlyout.SecondaryCommands>
+
+        </CommandBarFlyout>
+        
+    </UserControl.Resources>
+
+    <Canvas x:Name="PlaymatCanvas" >
+        <Image Source="/Versatile.Plays/Assets/Playmat.half.png" Canvas.ZIndex="0" />
+
+        <Image
+            x:Name="GxMarker" 
+            Source="/Versatile.Plays/Assets/gx_marker.png"
+            Width="80"
+            Visibility="Collapsed"
+            Canvas.Left="340"
+            Canvas.Top="100"
+            Canvas.ZIndex="1"
+            />
+        <Image
+            x:Name="VstarMarker"
+            Visibility="Collapsed"
+            Source="/Versatile.Plays/Assets/vstar_marker.png"
+            Width="80"
+            Canvas.Left="250"
+            Canvas.Top="100"
+            Canvas.ZIndex="1"
+            />
+    </Canvas>
+    
+</UserControl>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Versatile.Plays.Views.ConnectionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Versatile.Plays.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:converters="using:Versatile.CommonUI.Converters"
+    NavigationCacheMode="Required"
+    Style="{StaticResource FixedPageStyle}"
+    mc:Ignorable="d"
+    >
+
+    <Page.Resources>
+        <converters:NotConverter x:Name="NotConverter"/>
+        
+        <Style x:Name="InfoLabel" TargetType="TextBlock" BasedOn="{StaticResource DetailSubTitleStyle}">
+            <Setter Property="Margin" Value="4, 8, 0, 8" />
+        </Style>
+
+    </Page.Resources>
+    
+    <Grid
+        ColumnSpacing="32"
+        >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".4*" />
+            <ColumnDefinition Width=".6*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".4*" />
+            <RowDefinition Height=".6*" />
+        </Grid.RowDefinitions>
+
+        <Pivot
+            Grid.Row="0" 
+            Grid.Column="0"
+            Style="{StaticResource MediumPivotStyle}"
+            IsLocked="{x:Bind ViewModel.IsRunning, Mode=OneWay}"
+            >
+            <PivotItem x:Uid="/Versatile.Localization/Room/MyPivotItem">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".5*" />
+                        <RowDefinition Height=".5*" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel>
+                        <TextBlock
+                        Style="{StaticResource InfoLabel}"
+                        x:Uid="/Versatile.Localization/Room/MyNameTextBlock"
+                        />
+                        <TextBox
+                        PlaceholderText="{x:Bind UsernamePlaceholder}"
+                        Text="{x:Bind ViewModel.Nickname,Mode=TwoWay,UpdateSourceTrigger=LostFocus}"
+                        />
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Row="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Spacing="8"
+                        >
+                        <Button
+                            IsEnabled="{x:Bind ViewModel.IsInGame, Mode=OneWay, Converter={StaticResource NotConverter}}"
+                            Command="{x:Bind ViewModel.LaunchLocalGameCommand}"
+                            x:Uid="/Versatile.Localization/Room/LocalGameButton"
+                            />
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+            <PivotItem 
+                x:Uid="/Versatile.Localization/Room/ServerPivotItem"
+                >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".5*" />
+                        <RowDefinition Height=".5*" />
+                    </Grid.RowDefinitions>
+                    
+                    <StackPanel>
+                        <TextBlock
+                        Style="{StaticResource InfoLabel}"
+                        Text="Server address:"
+                        />
+                        <TextBox IsReadOnly="True" x:Name="ServerIpTextbox"></TextBox>
+                    </StackPanel>
+                    
+                    <StackPanel
+                        Grid.Row="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Spacing="8"
+                        >
+                        <Button
+                            x:Name="ServerStartButton"
+                            x:Uid="/Versatile.Localization/Room/ServerStartButton"
+                            IsEnabled="{x:Bind ViewModel.IsRunning, Mode=OneWay, Converter={StaticResource NotConverter}}"
+                            Command="{x:Bind ViewModel.LaunchServerCommand}"
+                            />
+                        <Button
+                            x:Name="ServerStopButton"
+                            x:Uid="/Versatile.Localization/Room/ServerStopButton"
+                            IsEnabled="{x:Bind ViewModel.IsRunning, Mode=OneWay}"
+                            Command="{x:Bind ViewModel.CloseNetworkCommand}"
+                            />
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+            <PivotItem
+                x:Uid="/Versatile.Localization/Room/ClientPivotItem"
+                >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".5*" />
+                        <RowDefinition Height=".5*" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel>
+                        <TextBlock
+                            Style="{StaticResource InfoLabel}"
+                            x:Uid="/Versatile.Localization/Room/ClientAddressTextBlock"
+                            />
+                        <TextBox
+                            Text="{x:Bind ViewModel.ClientAddress,Mode=TwoWay,UpdateSourceTrigger=LostFocus}"
+                            x:Name="ClientAddressTextbox"
+                            PlaceholderText="127.0.0.1"
+                            ></TextBox>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".3*" />
+                                <ColumnDefinition Width=".7*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            
+                            <TextBlock
+                                Style="{StaticResource InfoLabel}"
+                                Text="Status:"
+                                />
+                            <TextBlock
+                                Grid.Row="1"
+                                Style="{StaticResource InfoLabel}"
+                                Text="Ping:"
+                                />
+                        </Grid>
+
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Row="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Spacing="8"
+                        >
+                        <Button
+                            x:Name="ClientConnectButton"
+                            x:Uid="/Versatile.Localization/Room/ClientConnectButton"
+                            IsEnabled="{x:Bind ViewModel.IsRunning, Mode=OneWay, Converter={StaticResource NotConverter}}"
+                            Command="{x:Bind ViewModel.LaunchClientCommand}"
+                            CommandParameter="{Binding ElementName=ClientAddressTextbox, Path=Text}"
+                            />
+                        <Button
+                            x:Name="ClientDisconnentButton"
+                            x:Uid="/Versatile.Localization/Room/ClientDisconnentButton"
+                            IsEnabled="{x:Bind ViewModel.IsRunning, Mode=OneWay}"
+                            Command="{x:Bind ViewModel.CloseNetworkCommand}"
+                            />
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+
+        <Pivot
+            Grid.Row="1" 
+            Grid.Column="0"
+            >
+            <Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock
+                        FontSize="16"
+                        Text="{Binding}"
+                        />
+                </DataTemplate>
+            </Pivot.HeaderTemplate>
+            <PivotItem 
+                x:Uid="/Versatile.Localization/Room/RoomPivotItem"
+                >
+                <local:ConnectionUserListControl
+                    x:Name="UserListbox"
+                    ViewModel="{x:Bind ViewModel}" />
+            </PivotItem>
+        </Pivot>
+
+        <Pivot
+            Grid.Row="0" 
+            Grid.Column="1"
+            Grid.RowSpan="2" 
+            >
+            <Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock
+                        FontSize="16"
+                        Text="{Binding}"
+                        />
+                </DataTemplate>
+            </Pivot.HeaderTemplate>
+            <PivotItem 
+                x:Uid="/Versatile.Localization/Room/ChatPivotItem"
+                >
+                <local:ChatPanel
+                    x:Name="RoomLogBox"
+                    MessageSended="ChatPanel_MessageSended"
+                    IsLocked="{x:Bind ViewModel.IsConnected, Mode=OneWay, Converter={StaticResource NotConverter}}"
+                    />
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>

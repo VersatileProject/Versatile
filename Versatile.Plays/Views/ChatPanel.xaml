@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="Versatile.Plays.Views.ChatPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Versatile.Plays.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid
+        RowSpacing="4"
+        >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Border
+            Style="{StaticResource CardBorderStyle}"
+            Background="{ThemeResource ControlFillColorTertiaryBrush}"
+            >
+            <ScrollViewer 
+                x:Name="LogScrollViewer"
+                VerticalScrollBarVisibility="Auto"
+                VerticalAnchorRatio="1"
+                HorizontalAlignment="Stretch"
+                Margin="8, 8, 0, 8"
+                >
+                <RichTextBlock
+                    x:Name="LogTextBox"
+                    Grid.Row="0"
+                    TextWrapping="Wrap"
+                    
+                    />
+            </ScrollViewer>
+        </Border>
+
+        <TextBox
+            x:Name="ChatTextBox"
+            Grid.Row="1"
+            KeyDown="TextBox_KeyDown"
+            IsReadOnly="{x:Bind IsLocked, Mode=OneWay}"
+            TextWrapping="Wrap"
+            MaxLength="{x:Bind MaxMessageLength, Mode=OneWay}"
+            />
+        
+    </Grid>
+    
+</UserControl>

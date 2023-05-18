@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Versatile.Plays.Views.BattlePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Versatile.Plays.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="using:Versatile.CommonUI.Views" 
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls" 
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    NavigationCacheMode="Required"
+    Style="{StaticResource FixedPageStyle}"
+    mc:Ignorable="d">
+
+    <views:CardInfoPanel
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        DataContext="{x:Bind ViewModel.SelectedCard, Mode=OneWay}"
+        >
+        <Grid
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            ColumnSpacing="16"
+            RowSpacing="8"
+            >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".7*" />
+                <ColumnDefinition Width=".3*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height=".7*" x:Name="MainRow" />
+                <RowDefinition Height=".3*" />
+            </Grid.RowDefinitions>
+
+            <Grid
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <CommandBar
+                    HorizontalAlignment="Left"
+                    DefaultLabelPosition="Right" 
+                    Margin="0, 0, 0, 0"
+                    OverflowButtonVisibility="Collapsed" 
+                    IsEnabled="{x:Bind ViewModel.IsInPlay}"
+                    >
+
+                    <AppBarElementContainer>
+                        <SplitButton Click="LoadDeckButton_Click">
+                            <StackPanel Spacing="12" Orientation="Horizontal">
+                                <FontIcon FontSize="16" FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE81E;" />
+                                <TextBlock FontSize="12" x:Uid="/Versatile.Localization/Battle/Toolbar_LoadDeck"/>
+                            </StackPanel>
+                            <SplitButton.Flyout>
+                                <MenuFlyout>
+                                    <!-- history -->
+                                </MenuFlyout>
+                            </SplitButton.Flyout>
+                        </SplitButton>
+                    </AppBarElementContainer>
+
+                    <AppBarButton Icon="Pictures" x:Uid="/Versatile.Localization/Battle/Toolbar_Actions">
+                        <AppBarButton.Flyout>
+                            <MenuFlyout Placement="BottomEdgeAlignedLeft">
+                                <MenuFlyoutItem Visibility="Collapsed" x:Uid="/Versatile.Localization/Battle/Toolbar_ShuffleAndDraw" Click="ShuffleDeckAndDraw_Click" />
+                                <MenuFlyoutItem Visibility="Collapsed" x:Uid="/Versatile.Localization/Battle/Toolbar_RevealAndRedraw" Click="RedrawHand_Click" />
+                                <MenuFlyoutItem Visibility="Collapsed" x:Uid="/Versatile.Localization/Battle/Toolbar_SetPrize" Click="SetPrize_Click" />
+                                <MenuFlyoutItem Visibility="Collapsed" x:Uid="/Versatile.Localization/Battle/Toolbar_RevealPokemon" Click="RevealPokemon_Click" />
+
+                                <MenuFlyoutSeparator Visibility="Collapsed" />
+
+                                <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Toolbar_Forfeit" Click="Forfeit_Click">
+                                    <MenuFlyoutItem.Icon>
+                                        <FontIcon FontSize="16" FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE7C1;" />
+                                    </MenuFlyoutItem.Icon>
+                                </MenuFlyoutItem>
+
+                            </MenuFlyout>
+                        </AppBarButton.Flyout>
+                    </AppBarButton>
+
+                    <AppBarSeparator Visibility="Collapsed" />
+
+                    <AppBarElementContainer  Visibility="Collapsed">
+                        <SplitButton Click="BeginTurn_Click">
+                            <StackPanel Spacing="12" Orientation="Horizontal">
+                                <FontIcon FontSize="16" FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE893;" />
+                                <TextBlock FontSize="12" x:Uid="/Versatile.Localization/Battle/Toolbar_BeginTurn" />
+                            </StackPanel>
+                            <SplitButton.Flyout>
+                                <MenuFlyout>
+                                    <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Toolbar_BeginTurn"  Click="BeginTurn_Click">
+                                        <MenuFlyoutItem.Icon>
+                                            <FontIcon FontSize="16" FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE893;" />
+                                        </MenuFlyoutItem.Icon>
+                                    </MenuFlyoutItem>
+                                    <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Toolbar_BeginTurn2"  Click="BeginTurnWithoutDrawing_Click">
+                                        <MenuFlyoutItem.Icon>
+                                            <FontIcon FontSize="16" FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE768;" />
+                                        </MenuFlyoutItem.Icon>
+                                    </MenuFlyoutItem>
+                                </MenuFlyout>
+                            </SplitButton.Flyout>
+                        </SplitButton>
+                    </AppBarElementContainer>
+
+                    <AppBarButton Visibility="Collapsed" x:Uid="/Versatile.Localization/Battle/Toolbar_EndTurn" Click="EndTurn_Click">
+                        <AppBarButton.Icon>
+                            <FontIcon FontSize="16" FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE71A;" />
+                        </AppBarButton.Icon>
+                    </AppBarButton>
+
+                    <AppBarSeparator />
+                    
+                    <AppBarElementContainer>
+                        <SplitButton Click="FlipCoin_Click">
+                            <StackPanel Spacing="12" Orientation="Horizontal">
+                                <FontIcon FontSize="16" FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE895;" />
+                                <TextBlock FontSize="12" x:Uid="/Versatile.Localization/Battle/Toolbar_FlipCoin"/>
+                            </StackPanel>
+                            <SplitButton.Flyout>
+                                <MenuFlyout>
+                                    <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Toolbar_FlipCoin2" Click="FlipCoin_Click">
+                                        <MenuFlyoutItem.KeyboardAccelerators>
+                                            <KeyboardAccelerator 
+                                                Modifiers="Control" 
+                                                Key="F" />
+                                        </MenuFlyoutItem.KeyboardAccelerators>
+                                    </MenuFlyoutItem>
+                                    <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Toolbar_RollDie" Click="RollDie_Click">
+                                        <MenuFlyoutItem.KeyboardAccelerators>
+                                            <KeyboardAccelerator 
+                                                Modifiers="Control" 
+                                                Key="D" />
+                                        </MenuFlyoutItem.KeyboardAccelerators>
+                                    </MenuFlyoutItem>
+                                    <MenuFlyoutSeparator />
+                                    <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Toolbar_PlayRock" Click="PlayRPS_Click" Tag="Rock">
+                                    </MenuFlyoutItem>
+                                    <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Toolbar_PlayPaper" Click="PlayRPS_Click" Tag="Paper">
+                                    </MenuFlyoutItem>
+                                    <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Toolbar_PlayScissors" Click="PlayRPS_Click" Tag="Scissors">
+                                    </MenuFlyoutItem>
+                                    <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Toolbar_PlayRandom" Click="PlayRPS_Click">
+                                        <MenuFlyoutItem.KeyboardAccelerators>
+                                            <KeyboardAccelerator 
+                                                Modifiers="Control" 
+                                                Key="R" />
+                                        </MenuFlyoutItem.KeyboardAccelerators>
+                                    </MenuFlyoutItem>
+                                </MenuFlyout>
+                            </SplitButton.Flyout>
+                        </SplitButton>
+                    </AppBarElementContainer>
+
+                    <AppBarSeparator />
+
+                    <AppBarButton
+                        Label="Switch Side"
+                        Click="SwitchSide_Click"
+                        Visibility="{x:Bind ViewModel.IsLocal, Converter={StaticResource EmptyToVisibilityConverter},Mode=OneWay}"
+                        >
+                        <AppBarButton.Icon>
+                            <FontIcon FontSize="16" FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE895;" />
+                        </AppBarButton.Icon>
+                    </AppBarButton>
+
+
+                </CommandBar>
+
+                <CommandBar 
+                    Grid.Column="1"
+                    DefaultLabelPosition="Right" 
+                    HorizontalAlignment="Right"
+                    IsEnabled="{x:Bind ViewModel.IsInPlay}"
+                    >
+
+                    <AppBarButton  x:Uid="/Versatile.Localization/Battle/Toolbar_Exit" Click="Exit_Click">
+                        <AppBarButton.Icon>
+                            <FontIcon FontSize="16" FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE845;" />
+                        </AppBarButton.Icon>
+                    </AppBarButton>
+
+                    <CommandBar.SecondaryCommands>
+                        <AppBarButton  x:Uid="/Versatile.Localization/Battle/Toolbar_CopyPlaymat" Icon="Pictures" Click="CopyPlaymat_Click" />
+                        <AppBarButton Label="Change background(dev)" Icon="Pictures" Click="ChangeBackground_Click" />
+                        <AppBarButton Label="Load savedata(dev)" Click="LoadSavedata_Click" />
+                    </CommandBar.SecondaryCommands>
+
+                </CommandBar>
+            </Grid>
+
+            <Viewbox
+                x:Name="PlaymatViewbox"
+                Stretch="Uniform"
+                StretchDirection="DownOnly"
+                Grid.Row="1"
+                Grid.Column="0"
+                >
+                <local:BattlePlaymatControl
+                    x:Name="BattlePlaymat"
+                    Width="1024"
+                    Height="868"
+                    VerticalAlignment="Top"
+                    />
+            </Viewbox>
+
+            <local:SlotListControl
+                HorizontalAlignment="Stretch"
+                Grid.Row="1"
+                Grid.Column="1"
+                DataContext="{x:Bind ViewModel.SelectedSlot, Mode=OneWay}"
+                SelectedCardChanged="SlotListControl_SelectedCardChanged"
+                CommandCreated="SlotListControl_CommandCreated"
+                />
+
+            <local:ChatPanel
+                Grid.Row="2"
+                Grid.Column="0"
+                x:Name="GameLogBox"
+                MessageSended="GameLogBox_MessageSended"
+                LogBoxDoubleClicked="GameLogBox_LogBoxDoubleClicked"
+                />
+
+            <StackPanel
+                Grid.Row="2"
+                Grid.Column="1"
+                >
+                <StackPanel.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="Margin" Value="0, 0, 0, 4"/>
+                    </Style>
+                    <Style TargetType="SplitButton">
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="Margin" Value="0, 0, 0, 4"/>
+                    </Style>
+                </StackPanel.Resources>
+                
+                <StackPanel x:Name="PreparationPanel">
+                    <Button
+                        x:Name="LoadDeckButton"
+                        x:Uid="/Versatile.Localization/Battle/LoadDeckButton"
+                        Click="LoadDeckButton_Click_1"
+                        />
+                    <Button
+                        x:Name="ShuffleAndDrawButton"
+                        x:Uid="/Versatile.Localization/Battle/ShuffleAndDrawButton"
+                        Click="ShuffleAndDrawButton_Click"
+                        />
+                    <Button
+                        x:Name="RevealAndRedrawButton"
+                        x:Uid="/Versatile.Localization/Battle/RevealAndRedrawButton"
+                        Click="RevealAndRedrawButton_Click"
+                        />
+                    <Button
+                        x:Name="SetPrizeButton"
+                        x:Uid="/Versatile.Localization/Battle/SetPrizeButton"
+                        Click="SetPrizeButton_Click"
+                        />
+                    <Button
+                        x:Name="RevealPokemonButton"
+                        x:Uid="/Versatile.Localization/Battle/RevealPokemonButton"
+                        Click="RevealPokemonButton_Click"
+                        />
+                </StackPanel>
+                
+                <StackPanel x:Name="TurnPanel">
+                    <SplitButton 
+                        x:Name="BeginTurnButton"
+                        x:Uid="/Versatile.Localization/Battle/BeginTurnButton"
+                        Click="BeginTurnButton_Click"
+                        >
+                        <SplitButton.Flyout>
+                            <MenuFlyout>
+                                <MenuFlyoutItem
+                                    x:Uid="/Versatile.Localization/Battle/BeginTurnMenuFlyoutItem"
+                                    Click="BeginTurnMenuFlyoutItem_Click"
+                                    />
+                            </MenuFlyout>
+                        </SplitButton.Flyout>
+                    </SplitButton>
+                    <Button
+                        x:Name="EndTurnButton"
+                        x:Uid="/Versatile.Localization/Battle/EndTurnButton"
+                        Click="EndTurnButton_Click"
+                        />
+                    <Button
+                        x:Name="ForfeitButton" 
+                        Visibility="Collapsed"
+                        Click="ForfeitButton_Click"
+                        />
+                </StackPanel>
+            </StackPanel>
+            
+        </Grid>
+
+    </views:CardInfoPanel>
+</Page>

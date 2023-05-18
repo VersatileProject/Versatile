@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Toolbar_Actions.Label" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Toolbar_BeginTurn.Text" xml:space="preserve">
+    <value>Begin Turn</value>
+  </data>
+  <data name="Toolbar_BeginTurn2.Text" xml:space="preserve">
+    <value>Begin my turn without drawing</value>
+  </data>
+  <data name="Toolbar_CopyPlaymat.Label" xml:space="preserve">
+    <value>Copy Playmat</value>
+  </data>
+  <data name="Toolbar_EndTurn.Label" xml:space="preserve">
+    <value>End Turn</value>
+  </data>
+  <data name="Toolbar_Exit.Label" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Toolbar_FlipCoin.Text" xml:space="preserve">
+    <value>Flip Coin</value>
+  </data>
+  <data name="Toolbar_FlipCoin2.Text" xml:space="preserve">
+    <value>Flip a coin</value>
+  </data>
+  <data name="Toolbar_Forfeit.Text" xml:space="preserve">
+    <value>Forfeit</value>
+  </data>
+  <data name="Toolbar_LoadDeck.Text" xml:space="preserve">
+    <value>Load Deck</value>
+  </data>
+  <data name="Toolbar_PlayPaper.Text" xml:space="preserve">
+    <value>Play Paper</value>
+  </data>
+  <data name="Toolbar_PlayRandom.Text" xml:space="preserve">
+    <value>Random</value>
+  </data>
+  <data name="Toolbar_PlayRock.Text" xml:space="preserve">
+    <value>Play Rock</value>
+  </data>
+  <data name="Toolbar_PlayScissors.Text" xml:space="preserve">
+    <value>Play Scissors</value>
+  </data>
+  <data name="Toolbar_RevealAndRedraw.Text" xml:space="preserve">
+    <value>Reveal hand and redraw</value>
+  </data>
+  <data name="Toolbar_RevealPokemon.Text" xml:space="preserve">
+    <value>Reveal all Pokémon</value>
+  </data>
+  <data name="Toolbar_RollDie.Text" xml:space="preserve">
+    <value>Roll a die</value>
+  </data>
+  <data name="Toolbar_SetPrize.Text" xml:space="preserve">
+    <value>Set 6 prize cards</value>
+  </data>
+  <data name="Toolbar_ShuffleAndDraw.Text" xml:space="preserve">
+    <value>Shuffle deck and draw 7 cards</value>
+  </data>
+  <data name="PlayerSlotKey_Deck" xml:space="preserve">
+    <value>Deck</value>
+  </data>
+  <data name="PlayerSlotKey_Hand" xml:space="preserve">
+    <value>Hand</value>
+  </data>
+  <data name="PlayerSlotKey_DiscardPile" xml:space="preserve">
+    <value>Discard Pile</value>
+  </data>
+  <data name="PlayerSlotKey_Trainer" xml:space="preserve">
+    <value>Trainer</value>
+  </data>
+  <data name="PlayerSlotKey_Stadium" xml:space="preserve">
+    <value>Stadium</value>
+  </data>
+  <data name="PlayerSlotKey_LostZone" xml:space="preserve">
+    <value>Lost Zone</value>
+  </data>
+  <data name="PlayerSlotKey_Prize1" xml:space="preserve">
+    <value>Prize 1</value>
+  </data>
+  <data name="PlayerSlotKey_Prize2" xml:space="preserve">
+    <value>Prize 2</value>
+  </data>
+  <data name="PlayerSlotKey_Prize3" xml:space="preserve">
+    <value>Prize 3</value>
+  </data>
+  <data name="PlayerSlotKey_Prize4" xml:space="preserve">
+    <value>Prize 4</value>
+  </data>
+  <data name="PlayerSlotKey_Prize5" xml:space="preserve">
+    <value>Prize 5</value>
+  </data>
+  <data name="PlayerSlotKey_Prize6" xml:space="preserve">
+    <value>Prize 6</value>
+  </data>
+  <data name="PlayerSlotKey_Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="PlayerSlotKey_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="PlayerSlotKey_Bench1" xml:space="preserve">
+    <value>Bench 1</value>
+  </data>
+  <data name="PlayerSlotKey_Bench2" xml:space="preserve">
+    <value>Bench 2</value>
+  </data>
+  <data name="PlayerSlotKey_Bench3" xml:space="preserve">
+    <value>Bench 3</value>
+  </data>
+  <data name="PlayerSlotKey_Bench4" xml:space="preserve">
+    <value>Bench 4</value>
+  </data>
+  <data name="PlayerSlotKey_Bench5" xml:space="preserve">
+    <value>Bench 5</value>
+  </data>
+  <data name="PlayerSlotKey_Bench6" xml:space="preserve">
+    <value>Bench 6</value>
+  </data>
+  <data name="PlayerSlotKey_Bench7" xml:space="preserve">
+    <value>Bench 7</value>
+  </data>
+  <data name="PlayerSlotKey_Bench8" xml:space="preserve">
+    <value>Bench 8</value>
+  </data>
+  <data name="PlayerSlotKey_Bench9" xml:space="preserve">
+    <value>Bench 9</value>
+  </data>
+  <data name="PlayerSlotKey_Bench10" xml:space="preserve">
+    <value>Bench 10</value>
+  </data>
+  <data name="Playmat_Choose.Text" xml:space="preserve">
+    <value>Choose</value>
+  </data>
+  <data name="Playmat_Deck_DrawCard.Text" xml:space="preserve">
+    <value>Draw a card</value>
+  </data>
+  <data name="Playmat_Deck_DrawCards.Text" xml:space="preserve">
+    <value>Draw more cards</value>
+  </data>
+  <data name="Playmat_Deck_Reveal.Text" xml:space="preserve">
+    <value>Reveal deck</value>
+  </data>
+  <data name="Playmat_Deck_Shuffle.Text" xml:space="preserve">
+    <value>Shuffle deck</value>
+  </data>
+  <data name="Playmat_Deck_View.Text" xml:space="preserve">
+    <value>View deck</value>
+  </data>
+  <data name="Playmat_Hand_Reveal.Text" xml:space="preserve">
+    <value>Reveal hand</value>
+  </data>
+  <data name="Playmat_Hand_Shuffle.Text" xml:space="preserve">
+    <value>Shuffle hand</value>
+  </data>
+  <data name="Playmat_Pokemon_Abilities.Label" xml:space="preserve">
+    <value>Abilities</value>
+  </data>
+  <data name="Playmat_Pokemon_ChangeDC.Label" xml:space="preserve">
+    <value>Change damage counters</value>
+  </data>
+  <data name="Playmat_Pokemon_Choose.Label" xml:space="preserve">
+    <value>Choose</value>
+  </data>
+  <data name="Playmat_Pokemon_SetStatus.Label" xml:space="preserve">
+    <value>Set status</value>
+  </data>
+  <data name="Playmat_Pokemon_SetStatusAsleep.Label" xml:space="preserve">
+    <value>Asleep</value>
+  </data>
+  <data name="Playmat_Pokemon_SetStatusBurned.Label" xml:space="preserve">
+    <value>Burned</value>
+  </data>
+  <data name="Playmat_Pokemon_SetStatusConfused.Label" xml:space="preserve">
+    <value>Confused</value>
+  </data>
+  <data name="Playmat_Pokemon_SetStatusNormal.Label" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Playmat_Pokemon_SetStatusParalyzed.Label" xml:space="preserve">
+    <value>Paralyzed</value>
+  </data>
+  <data name="Playmat_Pokemon_SetStatusPoisoned.Label" xml:space="preserve">
+    <value>Poisone</value>
+  </data>
+  <data name="Playmat_Prize_Draw.Text" xml:space="preserve">
+    <value>Draw this card</value>
+  </data>
+  <data name="Playmat_Prize_Reveal.Text" xml:space="preserve">
+    <value>Reveal all cards</value>
+  </data>
+  <data name="Playmat_Prize_Shuffle.Text" xml:space="preserve">
+    <value>Shuffle all cards</value>
+  </data>
+  <data name="Playmat_Prize_View.Text" xml:space="preserve">
+    <value>View all cards</value>
+  </data>
+  <data name="SlotList_Abilities.Text" xml:space="preserve">
+    <value>Abilities</value>
+  </data>
+  <data name="SlotList_Choose.Text" xml:space="preserve">
+    <value>Choose</value>
+  </data>
+  <data name="SlotList_Reveal.Text" xml:space="preserve">
+    <value>Reveal</value>
+  </data>
+  <data name="SlotList_View.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="Command_BeginTurn" xml:space="preserve">
+    <value>{0} begins turn.</value>
+  </data>
+  <data name="Command_ChooseAbility" xml:space="preserve">
+    <value>{0} chooses {1} {2}'s {3} "{4}".</value>
+  </data>
+  <data name="Command_ChooseCard" xml:space="preserve">
+    <value>{0} chooses card {2} in {1}.</value>
+  </data>
+  <data name="Command_ChooseOpponentCard" xml:space="preserve">
+    <value>{0} chooses the opponent's card {2} in {1}.</value>
+  </data>
+  <data name="Command_ChooseOpponentSlot" xml:space="preserve">
+    <value>{0} chooses the opponent's {1}.</value>
+  </data>
+  <data name="Command_ChooseSlot" xml:space="preserve">
+    <value>{0} chooses {1}.</value>
+  </data>
+  <data name="Command_DrawCards" xml:space="preserve">
+    <value>{0} draws {1} card.</value>
+  </data>
+  <data name="Command_DrawCardsFailed" xml:space="preserve">
+    <value>{0} can not draw cards from deck.</value>
+  </data>
+  <data name="Command_EndTurn" xml:space="preserve">
+    <value>{0} ends turn.</value>
+  </data>
+  <data name="Command_ExchangePokemon" xml:space="preserve">
+    <value>{0} exchanges {1} with {2}.</value>
+  </data>
+  <data name="Command_Exit" xml:space="preserve">
+    <value>{0} exits the game.</value>
+  </data>
+  <data name="Command_FlipCoinHead" xml:space="preserve">
+    <value>{0} flips a coin: Head.</value>
+  </data>
+  <data name="Command_FlipCoinTail" xml:space="preserve">
+    <value>{0} flips a coin: Tail.</value>
+  </data>
+  <data name="Command_Forfeit" xml:space="preserve">
+    <value>{0} forfeits the game.</value>
+  </data>
+  <data name="Command_LoadDeck" xml:space="preserve">
+    <value>{0} loads a deck.</value>
+  </data>
+  <data name="Command_PlayRPS" xml:space="preserve">
+    <value>{0} plays {1}, {2} plays {3}, {4}.</value>
+  </data>
+  <data name="Command_PlayRPS_Draw" xml:space="preserve">
+    <value>draw</value>
+  </data>
+  <data name="Command_PlayRPS_Waiting" xml:space="preserve">
+    <value>{0} wants to play Rock-Paper-Scissors.</value>
+  </data>
+  <data name="Command_PlayRPS_Win" xml:space="preserve">
+    <value>{0} wins</value>
+  </data>
+  <data name="Command_PutDC" xml:space="preserve">
+    <value>{0} puts {1} DC on {2}.</value>
+  </data>
+  <data name="Command_RemoveDC" xml:space="preserve">
+    <value>{0} removes {1} DC from {2}.</value>
+  </data>
+  <data name="Command_RollDie" xml:space="preserve">
+    <value>{0} rolls a die: {1}.</value>
+  </data>
+  <data name="Command_UseAbility" xml:space="preserve">
+    <value>{0} uses {1}'s {2} "{3}".</value>
+  </data>
+  <data name="Command_MoveAllCards" xml:space="preserve">
+    <value>{0} moves all cards from {1} to {2}.</value>
+  </data>
+  <data name="Command_MoveCards" xml:space="preserve">
+    <value>{0} moves card {3} from {1} to {2}.</value>
+  </data>
+  <data name="Command_RevealAllCards" xml:space="preserve">
+    <value>{0} reveals all cards in {1}.</value>
+  </data>
+  <data name="Command_RevealAllPokemon" xml:space="preserve">
+    <value>{0} reveals all Pokemon.</value>
+  </data>
+  <data name="Command_RevealAllPrize" xml:space="preserve">
+    <value>{0} reveals all prize cards.</value>
+  </data>
+  <data name="Command_RevealCards" xml:space="preserve">
+    <value>{0} reveals card {2} in {1}.</value>
+  </data>
+  <data name="Command_SetBurned" xml:space="preserve">
+    <value>{0} puts a Burn marker on {1}.</value>
+  </data>
+  <data name="Command_SetPoisoned" xml:space="preserve">
+    <value>{0} puts a Poison marker on {1}.</value>
+  </data>
+  <data name="Command_SetPrize" xml:space="preserve">
+    <value>{0} sets {1} prize cards.</value>
+  </data>
+  <data name="Command_SetStatus" xml:space="preserve">
+    <value>{0} sets {1} to {2}.</value>
+  </data>
+  <data name="Command_ShufflePrize" xml:space="preserve">
+    <value>{0} shuffles all prize cards.</value>
+  </data>
+  <data name="Command_ShuffleSlot" xml:space="preserve">
+    <value>{0} shuffles {1}.</value>
+  </data>
+  <data name="Command_UnsetBurned" xml:space="preserve">
+    <value>{0} removes the Burned marker from {1}.</value>
+  </data>
+  <data name="Command_UnsetPoisoned" xml:space="preserve">
+    <value>{0} removes the Poisoned marker from {1}.</value>
+  </data>
+  <data name="Command_ViewAllCards" xml:space="preserve">
+    <value>{0} views all cards in {1}.</value>
+  </data>
+  <data name="Command_ViewCards" xml:space="preserve">
+    <value>{0} views card {2} in {1}.</value>
+  </data>
+  <data name="Command_ViewPrize" xml:space="preserve">
+    <value>{0} views all prize cards.</value>
+  </data>
+  <data name="BeginTurnButton.Content" xml:space="preserve">
+    <value>Begin turn</value>
+  </data>
+  <data name="BeginTurnMenuFlyoutItem.Text" xml:space="preserve">
+    <value>Begin turn without drawing card</value>
+  </data>
+  <data name="Command_ChooseOpponentAbility" xml:space="preserve">
+    <value>{0} chooses the opponent's {2}'s {3} “{4}” of {1}.</value>
+  </data>
+  <data name="Command_ShowSlotToOpponent" xml:space="preserve">
+    <value>{0} shows {1} to the opponent.</value>
+  </data>
+  <data name="Command_ShowToOpponent" xml:space="preserve">
+    <value>{0} shows {2} from {1} to the opponent.</value>
+  </data>
+  <data name="Dialog_ClosingText" xml:space="preserve">
+    <value>Please exit the game before closing the application.</value>
+  </data>
+  <data name="Dialog_ClosingTitle" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="EndTurnButton.Content" xml:space="preserve">
+    <value>End turn</value>
+  </data>
+  <data name="LoadDeckButton.Content" xml:space="preserve">
+    <value>Load Deck</value>
+  </data>
+  <data name="RevealAndRedrawButton.Content" xml:space="preserve">
+    <value>Reveal hand and redraw</value>
+  </data>
+  <data name="RevealPokemonButton.Content" xml:space="preserve">
+    <value>Reveal Pokemon in play</value>
+  </data>
+  <data name="RockPaperScissors_Paper" xml:space="preserve">
+    <value>Paper</value>
+  </data>
+  <data name="RockPaperScissors_Rock" xml:space="preserve">
+    <value>Rock</value>
+  </data>
+  <data name="RockPaperScissors_Scissors" xml:space="preserve">
+    <value>Scissors</value>
+  </data>
+  <data name="SetPrizeButton.Content" xml:space="preserve">
+    <value>Set prize cards</value>
+  </data>
+  <data name="ShuffleAndDrawButton.Content" xml:space="preserve">
+    <value>Shuffle deck and draw cards</value>
+  </data>
+  <data name="PokemonStatus_Asleep" xml:space="preserve">
+    <value>Asleep</value>
+  </data>
+  <data name="PokemonStatus_Burned" xml:space="preserve">
+    <value>Burned</value>
+  </data>
+  <data name="PokemonStatus_Confused" xml:space="preserve">
+    <value>Confused</value>
+  </data>
+  <data name="PokemonStatus_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="PokemonStatus_Paralyzed" xml:space="preserve">
+    <value>Paralyzed</value>
+  </data>
+</root>

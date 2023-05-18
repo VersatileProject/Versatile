@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="Versatile.Plays.Views.ConnectionUserListControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <MenuFlyout
+            x:Key="UserMenuFlyout"
+            Opening="MenuFlyout_Opening"
+            >
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Room/ChallengeMenuFlyoutItem" Click="ChallengeButton_Click" />
+        </MenuFlyout>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <ListView
+            ItemsSource="{x:Bind ViewModel.Users}"
+            Margin="0, 16"
+            >
+            <ListView.Resources>
+                <Style TargetType="ListViewItem" BasedOn="{StaticResource DefaultListViewItemStyle}">
+                    <Setter Property="ContextFlyout" Value="{StaticResource UserMenuFlyout}" />
+                </Style>
+            </ListView.Resources>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="48" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <SymbolIcon
+                            Symbol="Contact"
+                            />
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Text="{Binding Nickname}"
+                            />
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid
+            x:Name="ChallengSendingBar"
+            Grid.Row="1"
+            Visibility="{x:Bind ViewModel.ChallengeSendingText, Converter={StaticResource EmptyToVisibilityConverter}, Mode=OneWay}" 
+            >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock
+                Text="{x:Bind ViewModel.ChallengeSendingText, Mode=OneWay}"
+                FontWeight="Bold"
+                />
+
+            <Button
+                Grid.Column="1"
+                x:Uid="/Versatile.Localization/Room/CancelChallengeButton"
+                Command="{x:Bind ViewModel.CancelChallengeCommand}"
+                />
+
+        </Grid>
+        <Grid
+            x:Name="ChallengReceivingBar"
+            Grid.Row="2"
+            Visibility="{x:Bind ViewModel.ChallengeReceivingText, Converter={StaticResource EmptyToVisibilityConverter}, Mode=OneWay}"
+            >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+
+            <TextBlock
+                Text="{x:Bind ViewModel.ChallengeReceivingText, Mode=OneWay}"
+                FontWeight="Bold"
+                />
+
+                <Button
+                Grid.Column="1"
+                x:Uid="/Versatile.Localization/Room/AcceptChallengeButton"
+                Command="{x:Bind ViewModel.AcceptChallengeCommand}"
+                />
+
+                <Button
+                Grid.Column="2"
+                x:Uid="/Versatile.Localization/Room/RefuseChallengeButton"
+                Command="{x:Bind ViewModel.RefuseChallengeCommand}"
+                />
+
+        </Grid>
+
+
+    </Grid>
+</UserControl>

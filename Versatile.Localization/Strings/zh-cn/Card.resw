@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbilityType_Ability" xml:space="preserve">
+    <value>特性</value>
+  </data>
+  <data name="AbilityType_AncientTrait" xml:space="preserve">
+    <value>古代能力</value>
+  </data>
+  <data name="AbilityType_Attack" xml:space="preserve">
+    <value>招式</value>
+  </data>
+  <data name="AbilityType_Effect" xml:space="preserve">
+    <value>效果</value>
+  </data>
+  <data name="AbilityType_GX_Attack" xml:space="preserve">
+    <value>GX招式</value>
+  </data>
+  <data name="AbilityType_HeldBerry" xml:space="preserve">
+    <value>携带树果</value>
+  </data>
+  <data name="AbilityType_HeldItem" xml:space="preserve">
+    <value>携带道具</value>
+  </data>
+  <data name="AbilityType_PokeBody" xml:space="preserve">
+    <value>特殊体质</value>
+  </data>
+  <data name="AbilityType_PokePower" xml:space="preserve">
+    <value>特殊能力</value>
+  </data>
+  <data name="AbilityType_Rule" xml:space="preserve">
+    <value>规则</value>
+  </data>
+  <data name="AbilityType_VSTAR_Ability" xml:space="preserve">
+    <value>VSTAR特性</value>
+  </data>
+  <data name="AbilityType_VSTAR_Attack" xml:space="preserve">
+    <value>VSTAR招式</value>
+  </data>
+  <data name="CardColor_Colorless" xml:space="preserve">
+    <value>无色</value>
+  </data>
+  <data name="CardColor_Darkness" xml:space="preserve">
+    <value>恶</value>
+  </data>
+  <data name="CardColor_Dragon" xml:space="preserve">
+    <value>龙</value>
+  </data>
+  <data name="CardColor_Fairy" xml:space="preserve">
+    <value>妖精</value>
+  </data>
+  <data name="CardColor_Fighting" xml:space="preserve">
+    <value>斗</value>
+  </data>
+  <data name="CardColor_Fire" xml:space="preserve">
+    <value>火</value>
+  </data>
+  <data name="CardColor_Grass" xml:space="preserve">
+    <value>草</value>
+  </data>
+  <data name="CardColor_Lightning" xml:space="preserve">
+    <value>雷</value>
+  </data>
+  <data name="CardColor_Metal" xml:space="preserve">
+    <value>钢</value>
+  </data>
+  <data name="CardColor_Psychic" xml:space="preserve">
+    <value>超</value>
+  </data>
+  <data name="CardColor_Water" xml:space="preserve">
+    <value>水</value>
+  </data>
+  <data name="CardInfo_Resistance.Text" xml:space="preserve">
+    <value>抗性</value>
+  </data>
+  <data name="CardInfo_RetreatCost.Text" xml:space="preserve">
+    <value>撤退</value>
+  </data>
+  <data name="CardInfo_Weakness.Text" xml:space="preserve">
+    <value>弱点</value>
+  </data>
+  <data name="CardType_Energy" xml:space="preserve">
+    <value>能量卡</value>
+  </data>
+  <data name="CardType_Pokemon" xml:space="preserve">
+    <value>宝可梦卡</value>
+  </data>
+  <data name="CardType_Trainer" xml:space="preserve">
+    <value>训练家卡</value>
+  </data>
+  <data name="EnergyCardType_Basic" xml:space="preserve">
+    <value>基本能量卡</value>
+  </data>
+  <data name="EnergyCardType_Special" xml:space="preserve">
+    <value>特殊能量卡</value>
+  </data>
+  <data name="PokemonCardStage_Baby" xml:space="preserve">
+    <value>宝贝</value>
+  </data>
+  <data name="PokemonCardStage_Basic" xml:space="preserve">
+    <value>基础</value>
+  </data>
+  <data name="PokemonCardStage_BREAK" xml:space="preserve">
+    <value>BREAK进化</value>
+  </data>
+  <data name="PokemonCardStage_LEGEND" xml:space="preserve">
+    <value>传说</value>
+  </data>
+  <data name="PokemonCardStage_LevelUp" xml:space="preserve">
+    <value>升级</value>
+  </data>
+  <data name="PokemonCardStage_Mega" xml:space="preserve">
+    <value>Ⅿ进化</value>
+  </data>
+  <data name="PokemonCardStage_Restored" xml:space="preserve">
+    <value>复原</value>
+  </data>
+  <data name="PokemonCardStage_Stage1" xml:space="preserve">
+    <value>1阶进化</value>
+  </data>
+  <data name="PokemonCardStage_Stage2" xml:space="preserve">
+    <value>2阶进化</value>
+  </data>
+  <data name="PokemonCardStage_Unknown" xml:space="preserve">
+    <value>？？？</value>
+  </data>
+  <data name="PokemonCardStage_VMax" xml:space="preserve">
+    <value>Ⅴ进化</value>
+  </data>
+  <data name="PokemonCardStage_VUnion" xml:space="preserve">
+    <value>VUnion</value>
+  </data>
+  <data name="ProductType_Construction" xml:space="preserve">
+    <value>构筑卡组</value>
+  </data>
+  <data name="ProductType_Expansion" xml:space="preserve">
+    <value>补充包</value>
+  </data>
+  <data name="ProductType_Other" xml:space="preserve">
+    <value>其他商品</value>
+  </data>
+  <data name="ProductType_Promo" xml:space="preserve">
+    <value>特典卡</value>
+  </data>
+  <data name="Tag_ACESPEC" xml:space="preserve">
+    <value>ACE SPEC</value>
+  </data>
+  <data name="Tag_FUSION" xml:space="preserve">
+    <value>汇流</value>
+  </data>
+  <data name="Tag_ICHIGEKI" xml:space="preserve">
+    <value>一击</value>
+  </data>
+  <data name="Tag_PLASMA" xml:space="preserve">
+    <value>等离子队</value>
+  </data>
+  <data name="Tag_POKEMON_ALOLA" xml:space="preserve">
+    <value>阿罗拉宝可梦</value>
+  </data>
+  <data name="Tag_POKEMON_ARCEUS" xml:space="preserve">
+    <value>阿尔宙斯</value>
+  </data>
+  <data name="Tag_POKEMON_BREAK" xml:space="preserve">
+    <value>BREAK进化</value>
+  </data>
+  <data name="Tag_POKEMON_DUALTYPE" xml:space="preserve">
+    <value>双属性</value>
+  </data>
+  <data name="Tag_POKEMON_DYNAMAX" xml:space="preserve">
+    <value>极巨化</value>
+  </data>
+  <data name="Tag_POKEMON_ETERNAMAX" xml:space="preserve">
+    <value>无极巨化</value>
+  </data>
+  <data name="Tag_POKEMON_EX" xml:space="preserve">
+    <value>宝可梦EX</value>
+  </data>
+  <data name="Tag_POKEMON_EXTRA" xml:space="preserve">
+    <value>宝可梦ex</value>
+  </data>
+  <data name="Tag_POKEMON_GALAR" xml:space="preserve">
+    <value>伽勒尔宝可梦</value>
+  </data>
+  <data name="Tag_POKEMON_GIGANTAMAX" xml:space="preserve">
+    <value>超极巨化</value>
+  </data>
+  <data name="Tag_POKEMON_GREAT" xml:space="preserve">
+    <value>高级宝可梦</value>
+  </data>
+  <data name="Tag_POKEMON_GX" xml:space="preserve">
+    <value>宝可梦GX</value>
+  </data>
+  <data name="Tag_POKEMON_HISUI" xml:space="preserve">
+    <value>洗翠宝可梦</value>
+  </data>
+  <data name="Tag_POKEMON_LEGEND" xml:space="preserve">
+    <value>宝可梦LEGEND</value>
+  </data>
+  <data name="Tag_POKEMON_MEGA" xml:space="preserve">
+    <value>超级宝可梦</value>
+  </data>
+  <data name="Tag_POKEMON_PALDEA" xml:space="preserve">
+    <value>帕底亚宝可梦</value>
+  </data>
+  <data name="Tag_POKEMON_RADIANT" xml:space="preserve">
+    <value>光辉宝可梦</value>
+  </data>
+  <data name="Tag_POKEMON_REVERSION" xml:space="preserve">
+    <value>原始回归</value>
+  </data>
+  <data name="Tag_POKEMON_SP" xml:space="preserve">
+    <value>SP宝可梦</value>
+  </data>
+  <data name="Tag_POKEMON_STAR" xml:space="preserve">
+    <value>宝可梦☆</value>
+  </data>
+  <data name="Tag_POKEMON_TERASTAL" xml:space="preserve">
+    <value>太晶化</value>
+  </data>
+  <data name="Tag_POKEMON_ULTRABEAST" xml:space="preserve">
+    <value>究极异兽</value>
+  </data>
+  <data name="Tag_POKEMON_V" xml:space="preserve">
+    <value>宝可梦V</value>
+  </data>
+  <data name="Tag_POKEMON_VMAX" xml:space="preserve">
+    <value>宝可梦VMAX</value>
+  </data>
+  <data name="Tag_POKEMON_VSTAR" xml:space="preserve">
+    <value>宝可梦VSTAR</value>
+  </data>
+  <data name="Tag_POKEMON_VUNION" xml:space="preserve">
+    <value>宝可梦V-Union</value>
+  </data>
+  <data name="Tag_PRISMSTAR" xml:space="preserve">
+    <value>棱镜之星</value>
+  </data>
+  <data name="Tag_RENGEKI" xml:space="preserve">
+    <value>连击</value>
+  </data>
+  <data name="Tag_TAGTEAM" xml:space="preserve">
+    <value>TAG TEAM</value>
+  </data>
+  <data name="Tag_WAZAMACHINE" xml:space="preserve">
+    <value>招式学习器</value>
+  </data>
+  <data name="TrainerCardType_Item" xml:space="preserve">
+    <value>物品卡</value>
+  </data>
+  <data name="TrainerCardType_PokemonTool" xml:space="preserve">
+    <value>宝可梦道具</value>
+  </data>
+  <data name="TrainerCardType_Stadium" xml:space="preserve">
+    <value>竞技场卡</value>
+  </data>
+  <data name="TrainerCardType_Supporter" xml:space="preserve">
+    <value>支援者卡</value>
+  </data>
+</root>

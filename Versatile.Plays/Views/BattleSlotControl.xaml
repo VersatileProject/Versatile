@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="Versatile.Plays.Views.BattleSlotControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Versatile.Plays.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="using:CommunityToolkit.WinUI.UI" 
+    xmlns:battle="using:Versatile.Plays.Battles"
+    d:DataContext="{d:DesignInstance Type=battle:BattleSlot}"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+    </UserControl.Resources>
+    
+    <Grid 
+        Width = "80"
+        Height = "112"
+        Background="Transparent"
+        >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Canvas
+            x:Name="CardListCanvas"
+            Canvas.ZIndex="-1"
+            Grid.RowSpan="3"
+            />
+
+        <StackPanel
+            x:Name="MarkerLayer"
+            Grid.Row="1"
+            Canvas.ZIndex="3"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Left"
+            Margin="-8,0,0,0"
+            />
+
+        <Border
+            CornerRadius="2"
+            Canvas.ZIndex="3"
+            Grid.Row="2"
+            Background="#EEEE"
+            Margin="0,0,10,10"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Padding="2, 0"
+            Visibility="Collapsed"
+            x:Name="CountBorder"
+            >
+            <TextBlock
+                FontWeight="Bold" 
+                Foreground="#E333"
+                x:Name="CountTextBlock"
+                FontSize="14"
+                >
+            </TextBlock>
+        </Border>
+
+        <Grid
+            x:Name="DropAreaGrid"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.RowSpan="3"
+            Canvas.ZIndex="9"
+            >
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height=".5*"/>
+            </Grid.RowDefinitions>
+
+            <Border
+                x:Name="DropAreaTop"
+                CornerRadius="4, 4, 0, 0"
+                Canvas.ZIndex="5"
+                Background="Transparent"
+                Visibility="Collapsed"
+                AllowDrop="True"
+                DragEnter="DropAreaTop_DragEnter"
+                DragLeave="DropAreaTop_DragLeave"
+                Drop="DropAreaTop_Drop"
+                >
+                <Border
+                    x:Name="DropAreaBorderTop"
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch"
+                    CornerRadius="4, 4, 0, 0"
+                    Canvas.ZIndex="5"
+                    BorderBrush="Yellow"
+                    BorderThickness="3"
+                    Background="#33FFFF00"
+                    Visibility="Collapsed"
+                    >
+                    </Border>
+            </Border>
+
+            <Border
+                x:Name="DropAreaBottom"
+                Grid.Row="1"
+                CornerRadius="0, 0, 4, 4"
+                Canvas.ZIndex="5"
+                Background="Transparent"
+                Visibility="Collapsed"
+                AllowDrop="True"
+                DragEnter="DropAreaBottom_DragEnter"
+                DragLeave="DropAreaBottom_DragLeave"
+                Drop="DropAreaBottom_Drop"
+                >
+                <Border
+                    x:Name="DropAreaBorderBottom"
+                    CornerRadius="0, 0, 4, 4"
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch"
+                    BorderBrush="Yellow"
+                    BorderThickness="3"
+                    Background="#33FFFF00"
+                    Visibility="Collapsed"
+                    >
+                </Border>
+            </Border>
+
+            <Border
+                x:Name="DropAreaFull"
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                CornerRadius="4, 4, 4, 4"
+                Canvas.ZIndex="5"
+                Background="Transparent"
+                Visibility="Collapsed"
+                AllowDrop="True"
+                DragEnter="DropAreaFull_DragEnter"
+                DragLeave="DropAreaFull_DragLeave"
+                Drop="DropAreaFull_Drop"
+                >
+                <Border
+                    x:Name="DropAreaBorderFull"
+                    CornerRadius="4, 4, 4, 4"
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch"
+                    BorderBrush="Yellow"
+                    BorderThickness="3"
+                    Background="#33FFFF00"
+                    Visibility="Collapsed"
+                    >
+                </Border>
+            </Border>
+            
+        </Grid>
+    </Grid>
+</UserControl>

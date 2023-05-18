@@ -1,0 +1,18 @@
+{
+  "profiles": {
+    "Versatile (Unpackaged)": {
+      "commandName": "Project"
+    },
+    "Versatile (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Versatile (Dev)": {
+      "commandName": "Project",
+      "commandLineArgs": "/dev"
+    },
+    "Versatile (LocalGame)": {
+      "commandName": "Project",
+      "commandLineArgs": "/dev\r\n/localgame"
+    }
+  }
+}

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="Versatile.Browsers.Cards.CardSearchPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Versatile.Browsers.Cards"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:converters="using:Versatile.CommonUI.Converters" xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls" xmlns:views="using:Versatile.CommonUI.Views"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+
+        <Style TargetType="ToggleButton">
+            <Setter Property="Margin" Value="0, 0, 8, 8" />
+        </Style>
+
+        <converters:ColorToImageConverter x:Key="ColorToImage" />
+
+        <Style x:Key="ToggleButtons" TargetType="ItemsControl">
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <controls:WrapPanel 
+                            Orientation="Horizontal" 
+                            VerticalAlignment="Top" 
+                            />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    
+    
+    <Grid RowSpacing="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        
+        <ScrollViewer
+            Style="{StaticResource VerticalScrollViewerStyle}"
+            >
+            <StackPanel>
+                <TextBlock
+                    Style="{StaticResource InfoLabelStyle}"
+                    x:Uid="/Versatile.Localization/CardBrowser/Search_Scope"
+                    />
+
+                <ComboBox
+                    Grid.Row="1"
+                    HorizontalAlignment="Stretch"
+                    ItemsSource="{x:Bind ViewModel.SearchScopes}"
+                    SelectedValuePath="Key"
+                    DisplayMemberPath="Value"
+                    SelectedValue="{x:Bind ViewModel.SelectedScope, Mode=TwoWay}"
+                    >
+                </ComboBox>
+
+                <TextBlock
+                    Style="{StaticResource InfoLabelStyle}"
+                    x:Uid="/Versatile.Localization/CardBrowser/Search_CardName"
+                    />
+                <TextBox
+                    x:Name="CardNameTextbox"
+                    KeyDown="TextBox_KeyDown"
+                    />
+
+                <TextBlock
+                    Style="{StaticResource InfoLabelStyle}"
+                    x:Uid="/Versatile.Localization/CardBrowser/Search_CardText"
+                    />
+                <TextBox
+                    x:Name="CardTextTextbox"
+                    KeyDown="TextBox_KeyDown"
+                    />
+
+                <TextBlock
+                    Style="{StaticResource InfoLabelStyle}"
+                    x:Uid="/Versatile.Localization/CardBrowser/Search_CardType"
+                    />
+
+                <StackPanel
+                    Orientation="Horizontal"
+                    >
+                    <ToggleButton
+                        x:Name="PokemonToggleButton"
+                        Checked="CardTypeToggleButton_Checked"
+                        Unchecked="CardTypeToggleButton_Unchecked"
+                        x:Uid="/Versatile.Localization/CardBrowser/Search_CardTypePokemon"
+                        />
+                    <ToggleButton
+                        x:Name="TrainerToggleButton"
+                        Checked="CardTypeToggleButton_Checked"
+                        Unchecked="CardTypeToggleButton_Unchecked"
+                        x:Uid="/Versatile.Localization/CardBrowser/Search_CardTypeTrainer"
+                        />
+                    <ToggleButton
+                        x:Name="EnergyToggleButton"
+                        Checked="CardTypeToggleButton_Checked"
+                        Unchecked="CardTypeToggleButton_Unchecked"
+                        x:Uid="/Versatile.Localization/CardBrowser/Search_CardTypeEnergy"
+                        />
+                </StackPanel>
+
+                <StackPanel
+                    x:Name="PokemonOptions"
+                    Visibility="Collapsed"
+                    >
+                    <TextBlock
+                    Style="{StaticResource InfoLabelStyle}"
+                        x:Uid="/Versatile.Localization/CardBrowser/Search_PokemonColor"
+                        />
+
+                    <ItemsControl
+                        x:Name="CardColorToggleButtons"
+                        Style="{StaticResource ToggleButtons}"
+                        ItemsSource="{x:Bind ViewModel.SearchColors}"
+                        >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <ToggleButton
+                                    ToolTipService.ToolTip="{Binding Value}"
+                                    >
+                                    <ToggleButton.Content>
+                                        <views:ColorIcons Colors="{Binding Key}" />
+                                    </ToggleButton.Content>
+                                </ToggleButton>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <TextBlock
+                        Style="{StaticResource InfoLabelStyle}"
+                        x:Uid="/Versatile.Localization/CardBrowser/Search_PokemonStage"
+                        />
+
+                    <ItemsControl
+                        x:Name="PokemonStageToggleButtons"
+                        Style="{StaticResource ToggleButtons}"
+                        ItemsSource="{x:Bind ViewModel.SearchPokemonStages}"
+                        >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <ToggleButton Content="{Binding Value}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <TextBlock
+                        Style="{StaticResource InfoLabelStyle}"
+                        x:Uid="/Versatile.Localization/CardBrowser/Search_PokemonAbility"
+                        />
+
+                    <ItemsControl
+                        x:Name="PokemonAbilitiesToggleButtons"
+                        Style="{StaticResource ToggleButtons}"
+                        ItemsSource="{x:Bind ViewModel.SearchPokemonAbilities}"
+                        >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <ToggleButton Content="{Binding Value}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                </StackPanel>
+
+                <StackPanel
+                    x:Name="TrainerOptions"
+                    Visibility="Collapsed">
+                    <TextBlock
+                        Style="{StaticResource InfoLabelStyle}"
+                        x:Uid="/Versatile.Localization/CardBrowser/Search_TrainerType"
+                        />
+
+                    <ItemsControl
+                        x:Name="TrainerTypeToggleButtons"
+                        Style="{StaticResource ToggleButtons}"
+                        ItemsSource="{x:Bind ViewModel.SearchTrainerTypes}"
+                        >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <ToggleButton Content="{Binding Value}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                </StackPanel>
+
+                <StackPanel
+                    x:Name="EnergyOptions"
+                    Visibility="Collapsed"
+                    >
+                    <TextBlock
+                        Style="{StaticResource InfoLabelStyle}"
+                        x:Uid="/Versatile.Localization/CardBrowser/Search_EnergyType"
+                        />
+
+                    <ItemsControl
+                        x:Name="EnergyTypeToggleButtons"
+                        Style="{StaticResource ToggleButtons}"
+                        ItemsSource="{x:Bind ViewModel.SearchEnergyTypes}"
+                        >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <ToggleButton Content="{Binding Value}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                </StackPanel>
+
+                <TextBlock
+                    Style="{StaticResource InfoLabelStyle}"
+                    x:Uid="/Versatile.Localization/CardBrowser/Search_Tags"
+                    />
+
+                <ItemsControl
+                    x:Name="TagToggleButtons"
+                    ItemsSource="{x:Bind ViewModel.SearchTags}"
+                    Style="{StaticResource ToggleButtons}"
+                    >
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ToggleButton Content="{Binding Value}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <StackPanel
+                    Orientation="Horizontal"
+                    >
+                    <ToggleSwitch 
+                    x:Name="DistinctToggleSwitch"
+                    x:Uid="/Versatile.Localization/CardBrowser/Search_Distinct"
+                    MinWidth="40"
+                    />
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+        
+        <Grid
+            Grid.Row="1"
+            ColumnSpacing="16"
+            >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button
+                Grid.Column="0"
+                Click="FromClipboardButton_Click"
+                Content="From clipboard"
+                />
+            
+            <Button
+                Grid.Column="1"
+                Style="{StaticResource AccentButtonStyle}"
+                Click="SearchButton_Click"
+                MinWidth="80"
+                x:Uid="/Versatile.Localization/CardBrowser/Search_SearchButton"
+                />
+        </Grid>
+    </Grid>
+</UserControl>

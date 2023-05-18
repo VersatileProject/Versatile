@@ -1,0 +1,30 @@
+﻿namespace Versatile.Plays.ViewModels;
+
+public enum PlayerSlotKey
+{
+    Deck,
+    Hand,
+    DiscardPile,
+    Trainer,
+    Stadium,
+    LostZone,
+    Prize1,
+    Prize2,
+    Prize3,
+    Prize4,
+    Prize5,
+    Prize6,
+    Show,
+    Hide,
+    Active,
+    Bench1,
+    Bench2,
+    Bench3,
+    Bench4,
+    Bench5,
+    Bench6,
+    Bench7,
+    Bench8,
+    Bench9,
+    Bench10,
+}

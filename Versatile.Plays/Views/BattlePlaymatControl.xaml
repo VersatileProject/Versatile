@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="Versatile.Plays.Views.BattlePlaymatControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Versatile.Plays.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="using:CommunityToolkit.WinUI.UI"
+    Width="1024"
+    Height="768"
+    ui:UIElementExtensions.ClipToBounds="True"
+    mc:Ignorable="d">
+
+    <Grid
+        Width="1024"
+        Height="868"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Background="{x:Bind ViewModel.BackgroundImage, Mode=OneWay}"
+        >
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+        <local:PlayerPlaymat
+            Grid.Row="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="Green"
+            RenderTransformOrigin=".5, .5"
+            Player="{x:Bind ViewModel.UpperPlayer, Mode=OneWay}"
+            CommandCreated="PlayerPlaymat_CommandCreated"
+            >
+            <local:PlayerPlaymat.RenderTransform>
+                <RotateTransform Angle="180" />
+            </local:PlayerPlaymat.RenderTransform>
+        </local:PlayerPlaymat>
+        
+        <local:PlayerPlaymat
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="Green"
+            Player="{x:Bind ViewModel.LowerPlayer, Mode=OneWay}"
+            CommandCreated="PlayerPlaymat_CommandCreated"
+            />
+
+        <local:PlayerHandControl
+            Grid.Row="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Height="160"
+            Width="960"
+            Player="{x:Bind ViewModel.LowerPlayer, Mode=OneWay}"
+            CommandCreated="PlayerPlaymat_CommandCreated"
+            SelectedCardChanged="PlayerHandControl_SelectedCardChanged"
+            />
+    </Grid>
+</UserControl> 

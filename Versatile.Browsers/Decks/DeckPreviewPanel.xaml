@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="Versatile.Browsers.Decks.DeckPreviewPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Versatile.Browsers.Decks"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="using:CommunityToolkit.WinUI.UI"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    mc:Ignorable="d"
+    x:Name="DeckPreviewPanelControl"
+    >
+
+    <Grid
+        >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <CommandBar 
+            HorizontalAlignment="Left"
+            DefaultLabelPosition="Right"
+            OverflowButtonVisibility="Collapsed"
+            Margin="0, 0, 0, 16"
+            >
+            <AppBarButton
+                x:Uid="/Versatile.Localization/DeckEditor/Preview_TiledLayoutButton"
+                Icon="ViewAll"
+                Click="TiledLayoutButton_Click"
+                />
+            <AppBarButton
+                x:Uid="/Versatile.Localization/DeckEditor/Preview_StackedLayoutButton"
+                Icon="ViewAll"
+                Click="StackedLayoutButton_Click"
+                />
+            <AppBarButton
+                x:Uid="/Versatile.Localization/DeckEditor/Preview_CountedLayoutButton"
+                Icon="ViewAll"
+                Click="CountedLayoutButton_Click"
+                />
+            
+            <AppBarSeparator />
+            
+            <AppBarButton
+                x:Uid="/Versatile.Localization/DeckEditor/Preview_ChangeBackgroundButton"
+                Icon="BrowsePhotos"
+                Click="ChangeBackgroundButton_Click"
+                />
+            <AppBarButton
+                x:Uid="/Versatile.Localization/DeckEditor/Preview_CaptureButton"
+                Icon="Camera"
+                Click="CaptureButton_Click"
+                />
+            
+        </CommandBar>
+
+        <Viewbox
+            Stretch="Uniform"
+            StretchDirection="DownOnly"
+            Grid.Row="1"
+            >
+            
+            <Grid
+                Width="1440"
+                Height="1080"
+                x:Name="BackgroundCanvas"
+                Background="{x:Bind ViewModel.Background}"
+                >
+                <ItemsControl
+                    ItemsSource="{x:Bind ViewModel.PreviewCards, Mode=OneWay}"
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                    ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="32, 0"
+                    >
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <controls:WrapPanel
+                                SizeChanged="WrapPanel_SizeChanged"
+                                HorizontalSpacing="{Binding ElementName=DeckPreviewPanelControl, Path=ViewModel.HorizontalSpacing, Mode=OneWay}"
+                                VerticalSpacing="{Binding ElementName=DeckPreviewPanelControl, Path=ViewModel.VerticalSpacing, Mode=OneWay}"
+                                />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <local:CardPanel
+                                    Grid.Column="3"
+                                    HorizontalAlignment="Center"
+                                    CardHeight="{Binding ElementName=DeckPreviewPanelControl, Path=ViewModel.ItemHeight, Mode=OneWay}"
+                                    CardSpacing="-108"
+                                    Margin="108, 0, 0, 0"
+                                    Cards="{Binding Cards}"
+                                    CardSelected="CardPanel_CardSelected"
+                                    />
+                                <Border
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Bottom"
+                                    Margin="0, 0, 0, 12"
+                                    Background="#cc000000"
+                                    CornerRadius="8"
+                                    Width="56"
+                                    Height="44"
+                                    BorderThickness="4"
+                                    Tapped="Border_Tapped"
+                                    Visibility="{Binding Text,Converter={StaticResource EmptyToVisibilityConverter}}"
+                                    >
+                                    <TextBlock
+                                        TextAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Foreground="#ccffffff"
+                                        Text="{Binding Text}"
+                                        FontSize="22"
+                                        FontWeight="Bold"
+                                    />
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+        </Viewbox>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="Versatile.Plays.Views.SlotListControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Versatile.Plays.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:battles="using:Versatile.Plays.Battles" 
+    xmlns:system="using:System"
+    xmlns:i="using:Microsoft.Xaml.Interactivity" xmlns:core="using:Microsoft.Xaml.Interactions.Core" xmlns:converters="using:Versatile.CommonUI.Converters"
+    d:DataContext="{d:DesignInstance Type=battles:BattleSlot}"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <local:CardInfoConverter x:Name="CardInfoConverter" />
+        <local:CardIconConverter x:Name="CardIconConverter" />
+        
+        <MenuFlyout x:Name="SlotListMenuFlyout" Opening="SlotListMenuFlyout_Opening">
+
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/SlotList_Choose" Click="CardChoose_Click" />
+
+            <MenuFlyoutSeparator />
+
+            <MenuFlyoutItem x:Name="CardViewMenu" x:Uid="/Versatile.Localization/Battle/SlotList_View" Click="CardView_Click" />
+            <MenuFlyoutItem x:Name="CardRevealMenu" x:Uid="/Versatile.Localization/Battle/SlotList_Reveal" Click="CardReveal_Click" />
+            <MenuFlyoutItem x:Name="CardShowToOpponentMenu" x:Uid="/Versatile.Localization/Battle/Playmat_Deck_ShowToOpponent" Click="ShowToOpponent_Click" />
+            
+            <MenuFlyoutSeparator />
+
+            <MenuFlyoutSubItem x:Name="CardAbilitiesMenu" x:Uid="/Versatile.Localization/Battle/SlotList_Abilities" />
+            
+        </MenuFlyout>
+
+    </UserControl.Resources>
+    
+    <Grid VerticalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width=".4*" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        
+        <TextBlock
+            Style="{StaticResource DetailSubTitleStyle}"
+            Text="{Binding Type, Converter={StaticResource EnumToLocalizedConverter}, ConverterParameter='Battle'}"
+            />
+        
+        <TextBlock
+            Grid.Column="1"
+            Style="{StaticResource DetailSubTitleStyle}"
+            TextAlignment="Center"
+            Text="{Binding Cards.Count}"
+            />
+        <ListView
+            x:Name="CardListView"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding Cards}"
+            VerticalAlignment="Top"
+            SelectionChanged="ListView_SelectionChanged" 
+            SelectionMode="Extended"
+            DragItemsStarting="CardListView_DragItemsStarting"
+            CanDragItems="{Binding Player.IsMe}"
+            RightTapped="CardListView_RightTapped"
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid
+                        ColumnSpacing="4"
+                    >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="16" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image
+                            Grid.Column="0"
+                            VerticalAlignment="Center"
+                            Source="{Binding Converter={StaticResource CardIconConverter}}">
+                        </Image>
+
+                        <TextBlock
+                            Grid.Column="1"
+                            VerticalAlignment="Center"
+                            Text="{Binding Converter={StaticResource CardInfoConverter}}"
+                            />
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem" BasedOn="{StaticResource DefaultListViewItemStyle}">
+                    <Setter Property="ContextFlyout" Value="{StaticResource SlotListMenuFlyout}" />
+                    <Setter Property="Margin" Value="0" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+        
+    </Grid>
+</UserControl>

@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Toolbar_Actions.Label" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="Toolbar_BeginTurn.Text" xml:space="preserve">
+    <value>开始回合</value>
+  </data>
+  <data name="Toolbar_BeginTurn2.Text" xml:space="preserve">
+    <value>开始回合且不抽卡</value>
+  </data>
+  <data name="Toolbar_CopyPlaymat.Label" xml:space="preserve">
+    <value>复制场地到剪贴板</value>
+  </data>
+  <data name="Toolbar_EndTurn.Label" xml:space="preserve">
+    <value>结束回合</value>
+  </data>
+  <data name="Toolbar_Exit.Label" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="Toolbar_FlipCoin.Text" xml:space="preserve">
+    <value>投掷硬币</value>
+  </data>
+  <data name="Toolbar_FlipCoin2.Text" xml:space="preserve">
+    <value>投掷一枚硬币</value>
+  </data>
+  <data name="Toolbar_Forfeit.Text" xml:space="preserve">
+    <value>认输</value>
+  </data>
+  <data name="Toolbar_LoadDeck.Text" xml:space="preserve">
+    <value>载入卡组</value>
+  </data>
+  <data name="Toolbar_PlayPaper.Text" xml:space="preserve">
+    <value>出“布”</value>
+  </data>
+  <data name="Toolbar_PlayRandom.Text" xml:space="preserve">
+    <value>随机出拳</value>
+  </data>
+  <data name="Toolbar_PlayRock.Text" xml:space="preserve">
+    <value>出“石头”</value>
+  </data>
+  <data name="Toolbar_PlayScissors.Text" xml:space="preserve">
+    <value>出“剪刀”</value>
+  </data>
+  <data name="Toolbar_RevealAndRedraw.Text" xml:space="preserve">
+    <value>展示手牌，然后洗入牌库并重抽</value>
+  </data>
+  <data name="Toolbar_RevealPokemon.Text" xml:space="preserve">
+    <value>翻开场上所有宝可梦</value>
+  </data>
+  <data name="Toolbar_RollDie.Text" xml:space="preserve">
+    <value>投掷一枚骰子</value>
+  </data>
+  <data name="Toolbar_SetPrize.Text" xml:space="preserve">
+    <value>放置奖赏卡</value>
+  </data>
+  <data name="Toolbar_ShuffleAndDraw.Text" xml:space="preserve">
+    <value>洗切牌组，抽取7张手牌</value>
+  </data>
+  <data name="PlayerSlotKey_Deck" xml:space="preserve">
+    <value>牌库</value>
+  </data>
+  <data name="PlayerSlotKey_Hand" xml:space="preserve">
+    <value>手牌</value>
+  </data>
+  <data name="PlayerSlotKey_DiscardPile" xml:space="preserve">
+    <value>弃牌区</value>
+  </data>
+  <data name="PlayerSlotKey_Trainer" xml:space="preserve">
+    <value>训练家卡区</value>
+  </data>
+  <data name="PlayerSlotKey_Stadium" xml:space="preserve">
+    <value>竞技场卡区</value>
+  </data>
+  <data name="PlayerSlotKey_LostZone" xml:space="preserve">
+    <value>放逐区</value>
+  </data>
+  <data name="PlayerSlotKey_Prize1" xml:space="preserve">
+    <value>奖赏卡1</value>
+  </data>
+  <data name="PlayerSlotKey_Prize2" xml:space="preserve">
+    <value>奖赏卡2</value>
+  </data>
+  <data name="PlayerSlotKey_Prize3" xml:space="preserve">
+    <value>奖赏卡3</value>
+  </data>
+  <data name="PlayerSlotKey_Prize4" xml:space="preserve">
+    <value>奖赏卡4</value>
+  </data>
+  <data name="PlayerSlotKey_Prize5" xml:space="preserve">
+    <value>奖赏卡5</value>
+  </data>
+  <data name="PlayerSlotKey_Prize6" xml:space="preserve">
+    <value>奖赏卡6</value>
+  </data>
+  <data name="PlayerSlotKey_Show" xml:space="preserve">
+    <value>展示区</value>
+  </data>
+  <data name="PlayerSlotKey_Active" xml:space="preserve">
+    <value>战斗场</value>
+  </data>
+  <data name="PlayerSlotKey_Bench1" xml:space="preserve">
+    <value>备战区1</value>
+  </data>
+  <data name="PlayerSlotKey_Bench2" xml:space="preserve">
+    <value>备战区2</value>
+  </data>
+  <data name="PlayerSlotKey_Bench3" xml:space="preserve">
+    <value>备战区3</value>
+  </data>
+  <data name="PlayerSlotKey_Bench4" xml:space="preserve">
+    <value>备战区4</value>
+  </data>
+  <data name="PlayerSlotKey_Bench5" xml:space="preserve">
+    <value>备战区5</value>
+  </data>
+  <data name="PlayerSlotKey_Bench6" xml:space="preserve">
+    <value>备战区6</value>
+  </data>
+  <data name="PlayerSlotKey_Bench7" xml:space="preserve">
+    <value>备战区7</value>
+  </data>
+  <data name="PlayerSlotKey_Bench8" xml:space="preserve">
+    <value>备战区8</value>
+  </data>
+  <data name="PlayerSlotKey_Bench9" xml:space="preserve">
+    <value>备战区9</value>
+  </data>
+  <data name="PlayerSlotKey_Bench10" xml:space="preserve">
+    <value>备战区10</value>
+  </data>
+  <data name="SlotList_Abilities.Text" xml:space="preserve">
+    <value>能力</value>
+  </data>
+  <data name="SlotList_Choose.Text" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="SlotList_Reveal.Text" xml:space="preserve">
+    <value>翻开</value>
+  </data>
+  <data name="SlotList_View.Text" xml:space="preserve">
+    <value>查看</value>
+  </data>
+  <data name="Playmat_Choose.Text" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="Playmat_Deck_DrawCard.Text" xml:space="preserve">
+    <value>抽一张牌</value>
+  </data>
+  <data name="Playmat_Deck_DrawCards.Text" xml:space="preserve">
+    <value>抽多张牌</value>
+  </data>
+  <data name="Playmat_Deck_Reveal.Text" xml:space="preserve">
+    <value>翻开牌库</value>
+  </data>
+  <data name="Playmat_Deck_Shuffle.Text" xml:space="preserve">
+    <value>洗切牌库</value>
+  </data>
+  <data name="Playmat_Deck_View.Text" xml:space="preserve">
+    <value>查看牌库</value>
+  </data>
+  <data name="Playmat_Hand_Reveal.Text" xml:space="preserve">
+    <value>展示手牌</value>
+  </data>
+  <data name="Playmat_Hand_Shuffle.Text" xml:space="preserve">
+    <value>洗切手牌</value>
+  </data>
+  <data name="Playmat_Pokemon_Abilities.Label" xml:space="preserve">
+    <value>能力</value>
+  </data>
+  <data name="Playmat_Pokemon_ChangeDC.Label" xml:space="preserve">
+    <value>调整伤害指示物</value>
+  </data>
+  <data name="Playmat_Pokemon_Choose.Label" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="Playmat_Pokemon_SetStatus.Label" xml:space="preserve">
+    <value>设置特殊状态</value>
+  </data>
+  <data name="Playmat_Pokemon_SetStatusAsleep.Label" xml:space="preserve">
+    <value>睡眠</value>
+  </data>
+  <data name="Playmat_Pokemon_SetStatusBurned.Label" xml:space="preserve">
+    <value>灼伤</value>
+  </data>
+  <data name="Playmat_Pokemon_SetStatusConfused.Label" xml:space="preserve">
+    <value>混乱</value>
+  </data>
+  <data name="Playmat_Pokemon_SetStatusNormal.Label" xml:space="preserve">
+    <value>正常</value>
+  </data>
+  <data name="Playmat_Pokemon_SetStatusParalyzed.Label" xml:space="preserve">
+    <value>麻痹</value>
+  </data>
+  <data name="Playmat_Pokemon_SetStatusPoisoned.Label" xml:space="preserve">
+    <value>中毒</value>
+  </data>
+  <data name="Playmat_Prize_Draw.Text" xml:space="preserve">
+    <value>抽这张牌</value>
+  </data>
+  <data name="Playmat_Prize_Reveal.Text" xml:space="preserve">
+    <value>翻开所有奖赏卡</value>
+  </data>
+  <data name="Playmat_Prize_Shuffle.Text" xml:space="preserve">
+    <value>洗切所有奖赏卡</value>
+  </data>
+  <data name="Playmat_Prize_View.Text" xml:space="preserve">
+    <value>查看所有奖赏卡</value>
+  </data>
+  <data name="Command_BeginTurn" xml:space="preserve">
+    <value>{0}的回合开始。</value>
+  </data>
+  <data name="Command_ChooseAbility" xml:space="preserve">
+    <value>{0}选择了{1}的{2}的{3}“{4}”。</value>
+  </data>
+  <data name="Command_ChooseCard" xml:space="preserve">
+    <value>{0}选择了{1}的卡牌{2}。</value>
+  </data>
+  <data name="Command_ChooseOpponentCard" xml:space="preserve">
+    <value>{0}选择了对手的{1}的卡牌{2}。</value>
+  </data>
+  <data name="Command_ChooseOpponentSlot" xml:space="preserve">
+    <value>{0}选择了对手的{1}。</value>
+  </data>
+  <data name="Command_ChooseSlot" xml:space="preserve">
+    <value>{0}选择了{1}。</value>
+  </data>
+  <data name="Command_DrawCards" xml:space="preserve">
+    <value>{0}抽取了{1}张牌。</value>
+  </data>
+  <data name="Command_DrawCardsFailed" xml:space="preserve">
+    <value>{0}无法从牌库抽取卡牌。</value>
+  </data>
+  <data name="Command_EndTurn" xml:space="preserve">
+    <value>{0}的回合结束。</value>
+  </data>
+  <data name="Command_ExchangePokemon" xml:space="preserve">
+    <value>{0}交换了{1}与{2}的位置。</value>
+  </data>
+  <data name="Command_Exit" xml:space="preserve">
+    <value>{0}退出了游戏。</value>
+  </data>
+  <data name="Command_FlipCoinHead" xml:space="preserve">
+    <value>{0}投掷一枚硬币：正面。</value>
+  </data>
+  <data name="Command_FlipCoinTail" xml:space="preserve">
+    <value>{0}投掷一枚硬币：背面。</value>
+  </data>
+  <data name="Command_Forfeit" xml:space="preserve">
+    <value>{0}认输。</value>
+  </data>
+  <data name="Command_LoadDeck" xml:space="preserve">
+    <value>{0}载入了卡组。</value>
+  </data>
+  <data name="Command_MoveAllCards" xml:space="preserve">
+    <value>{0}将{1}的所有卡牌移动到{2}。</value>
+  </data>
+  <data name="Command_MoveCards" xml:space="preserve">
+    <value>{0}将{1}的卡牌{3}移动到{2}。</value>
+  </data>
+  <data name="Command_PlayRPS" xml:space="preserve">
+    <value>{0}出了{1}，{2}出了{3}，{4}。</value>
+  </data>
+  <data name="Command_PlayRPS_Draw" xml:space="preserve">
+    <value>平手</value>
+  </data>
+  <data name="Command_PlayRPS_Waiting" xml:space="preserve">
+    <value>{0}想要玩石头剪刀布。</value>
+  </data>
+  <data name="Command_PlayRPS_Win" xml:space="preserve">
+    <value>{0}获胜</value>
+  </data>
+  <data name="Command_PutDC" xml:space="preserve">
+    <value>{0}在{2}身上放置了{1}个伤害指示物。</value>
+  </data>
+  <data name="Command_RemoveDC" xml:space="preserve">
+    <value>{0}从{2}身上移除了{1}个伤害指示物。</value>
+  </data>
+  <data name="Command_RevealAllCards" xml:space="preserve">
+    <value>{0}翻开了{1}的所有卡牌。</value>
+  </data>
+  <data name="Command_RevealAllPokemon" xml:space="preserve">
+    <value>{0}翻开了场上的所有宝可梦。</value>
+  </data>
+  <data name="Command_RevealAllPrize" xml:space="preserve">
+    <value>{0}翻开了所有的奖品牌。</value>
+  </data>
+  <data name="Command_RevealCards" xml:space="preserve">
+    <value>{0}翻开了{1}的卡牌{2}。</value>
+  </data>
+  <data name="Command_RollDie" xml:space="preserve">
+    <value>{0}投掷了一枚骰子：{1}。</value>
+  </data>
+  <data name="Command_SetBurned" xml:space="preserve">
+    <value>{0}在{1}身上放置了灼伤标记。</value>
+  </data>
+  <data name="Command_SetPoisoned" xml:space="preserve">
+    <value>{0}在{1}身上放置了中毒标记。</value>
+  </data>
+  <data name="Command_SetPrize" xml:space="preserve">
+    <value>{0}设置了{1}张奖赏卡。</value>
+  </data>
+  <data name="Command_SetStatus" xml:space="preserve">
+    <value>{0}将{1}的特殊状态设置为{2}。</value>
+  </data>
+  <data name="Command_ShufflePrize" xml:space="preserve">
+    <value>{0}洗切了所有的奖赏卡。</value>
+  </data>
+  <data name="Command_ShuffleSlot" xml:space="preserve">
+    <value>{0}洗切了{1}。</value>
+  </data>
+  <data name="Command_UnsetBurned" xml:space="preserve">
+    <value>{0}从{1}身上移除了灼伤标记。</value>
+  </data>
+  <data name="Command_UnsetPoisoned" xml:space="preserve">
+    <value>{0}从{1}身上移除了中毒标记。</value>
+  </data>
+  <data name="Command_UseAbility" xml:space="preserve">
+    <value>{0}使用了{1}的{2}“{3}”。</value>
+  </data>
+  <data name="Command_ViewAllCards" xml:space="preserve">
+    <value>{0}查看了{1}的所有卡牌。</value>
+  </data>
+  <data name="Command_ViewCards" xml:space="preserve">
+    <value>{0}查看了{1}的卡牌{2}。</value>
+  </data>
+  <data name="Command_ViewPrize" xml:space="preserve">
+    <value>{0}查看了所有的奖赏卡。</value>
+  </data>
+  <data name="Command_ChooseOpponentAbility" xml:space="preserve">
+    <value>{0}选择了对手{1}的{2}的{3}“{4}”。</value>
+  </data>
+  <data name="PlayerSlotKey_Hide" xml:space="preserve">
+    <value>覆盖区</value>
+  </data>
+  <data name="Command_ShowToOpponent" xml:space="preserve">
+    <value>{0}将{1}的卡牌{2}交给对手查看。</value>
+  </data>
+  <data name="Playmat_Deck_ShowToOpponent.Text" xml:space="preserve">
+    <value>给对手看</value>
+  </data>
+  <data name="Command_ShowSlotToOpponent" xml:space="preserve">
+    <value>{0}将{1}交给对手查看。</value>
+  </data>
+  <data name="RockPaperScissors_Paper" xml:space="preserve">
+    <value>布</value>
+  </data>
+  <data name="RockPaperScissors_Rock" xml:space="preserve">
+    <value>石头</value>
+  </data>
+  <data name="RockPaperScissors_Scissors" xml:space="preserve">
+    <value>剪刀</value>
+  </data>
+  <data name="BeginTurnButton.Content" xml:space="preserve">
+    <value>回合开始</value>
+  </data>
+  <data name="BeginTurnMenuFlyoutItem.Text" xml:space="preserve">
+    <value>回合开始，且不抽牌</value>
+  </data>
+  <data name="EndTurnButton.Content" xml:space="preserve">
+    <value>回合结束</value>
+  </data>
+  <data name="LoadDeckButton.Content" xml:space="preserve">
+    <value>打开卡组</value>
+  </data>
+  <data name="RevealAndRedrawButton.Content" xml:space="preserve">
+    <value>展示手牌，重新抽取</value>
+  </data>
+  <data name="RevealPokemonButton.Content" xml:space="preserve">
+    <value>翻开场上的宝可梦</value>
+  </data>
+  <data name="SetPrizeButton.Content" xml:space="preserve">
+    <value>放置奖励牌</value>
+  </data>
+  <data name="ShuffleAndDrawButton.Content" xml:space="preserve">
+    <value>洗切卡组，抽取手牌</value>
+  </data>
+  <data name="Dialog_ClosingText" xml:space="preserve">
+    <value>您正在游戏中，请先退出游戏。</value>
+  </data>
+  <data name="Dialog_ClosingTitle" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="PokemonStatus_Asleep" xml:space="preserve">
+    <value>睡眠</value>
+  </data>
+  <data name="PokemonStatus_Burned" xml:space="preserve">
+    <value>灼伤</value>
+  </data>
+  <data name="PokemonStatus_Confused" xml:space="preserve">
+    <value>混乱</value>
+  </data>
+  <data name="PokemonStatus_Normal" xml:space="preserve">
+    <value>正常</value>
+  </data>
+  <data name="PokemonStatus_Paralyzed" xml:space="preserve">
+    <value>麻痹</value>
+  </data>
+</root>
