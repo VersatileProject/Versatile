@@ -48,6 +48,11 @@
             <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_Prize_Shuffle" Click="ShufflePrize_Click" />
         </MenuFlyout>
 
+        <MenuFlyout x:Name="MyShowHideMenuFlyout">
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_ShowHide_Choose" Click="ShowHideChoose_Click" FontWeight="Bold" />
+            <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Playmat_ShowHide_Shuffle" Click="ShowHideShuffle_Click" />
+        </MenuFlyout>
+
         <CommandBarFlyout 
             x:Name="MyPokemonFlyout"
             AlwaysExpanded="True" 
@@ -60,7 +65,7 @@
 
                 <AppBarSeparator />
 
-                <AppBarButton x:Name="ChangeDCMenuItem" x:Uid="/Versatile.Localization/Battle/Playmat_Pokemon_ChangeDC" >
+                <AppBarButton Visibility="Collapsed" x:Name="ChangeDCMenuItem" x:Uid="/Versatile.Localization/Battle/Playmat_Pokemon_ChangeDC" >
                     <AppBarButton.Flyout>
                         <Flyout>
                             <Grid x:Name="DamageCounterGrid">
@@ -95,6 +100,9 @@
                             </Grid>
                         </Flyout>
                     </AppBarButton.Flyout>
+                </AppBarButton>
+
+                <AppBarButton x:Uid="/Versatile.Localization/Battle/Playmat_Pokemon_ChangeDC" Click="AppBarButton_Click" >
                 </AppBarButton>
 
                 <AppBarButton x:Name="SetStatusMenuItem" x:Uid="/Versatile.Localization/Battle/Playmat_Pokemon_SetStatus" >

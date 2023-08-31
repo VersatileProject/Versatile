@@ -123,11 +123,17 @@
   <data name="CheckDeck_AceSpec" xml:space="preserve">
     <value>More than 1 Ace Spec in a deck</value>
   </data>
+  <data name="CheckDeck_NoBasic" xml:space="preserve">
+    <value>No Basic Pokemon</value>
+  </data>
   <data name="CheckDeck_PrismStar" xml:space="preserve">
     <value>More than 1 Prism Star in a deck</value>
   </data>
   <data name="CheckDeck_SameName" xml:space="preserve">
     <value>More than {1} [{0}] in a deck</value>
+  </data>
+  <data name="CommentAppBarButton.Label" xml:space="preserve">
+    <value>Comment</value>
   </data>
   <data name="Dialog_DeckChangedText" xml:space="preserve">
     <value>Deck has been modified. Do you want to save your changes?</value>

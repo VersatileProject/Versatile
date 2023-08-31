@@ -123,6 +123,9 @@
   <data name="CheckDeck_AceSpec" xml:space="preserve">
     <value>Ace Spec的数量超过1张</value>
   </data>
+  <data name="CheckDeck_NoBasic" xml:space="preserve">
+    <value>没有基础宝可梦</value>
+  </data>
   <data name="CheckDeck_PrismStar" xml:space="preserve">
     <value>Prism Star的数量超过1张</value>
   </data>

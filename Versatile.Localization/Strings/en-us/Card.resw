@@ -354,9 +354,6 @@
   <data name="Tag_TAGTEAM" xml:space="preserve">
     <value>TAG TEAM</value>
   </data>
-  <data name="Tag_WAZAMACHINE" xml:space="preserve">
-    <value>Technical Machine</value>
-  </data>
   <data name="AbilityType_Effect" xml:space="preserve">
     <value>Effect</value>
   </data>
@@ -371,5 +368,14 @@
   </data>
   <data name="Tag_POKEMON_GIGANTAMAX" xml:space="preserve">
     <value>GIGANTAMAX</value>
+  </data>
+  <data name="Tag_POKEMON_DELTASPECIES" xml:space="preserve">
+    <value>δ DELTA SPECIES</value>
+  </data>
+  <data name="Tag_ROCKETSSECRETMACHINE" xml:space="preserve">
+    <value>Rocket's Secret Machine</value>
+  </data>
+  <data name="Tag_TECHNICALMACHINE" xml:space="preserve">
+    <value>Technical Machine</value>
   </data>
 </root>

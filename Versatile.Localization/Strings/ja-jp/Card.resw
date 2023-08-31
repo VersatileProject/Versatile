@@ -279,6 +279,9 @@
   <data name="Tag_POKEMON_BREAK" xml:space="preserve">
     <value>BREAK進化</value>
   </data>
+  <data name="Tag_POKEMON_DELTASPECIES" xml:space="preserve">
+    <value>δ-デルタ種</value>
+  </data>
   <data name="Tag_POKEMON_DUALTYPE" xml:space="preserve">
     <value>デュアルタイプ</value>
   </data>
@@ -354,10 +357,13 @@
   <data name="Tag_RENGEKI" xml:space="preserve">
     <value>RENGEKI</value>
   </data>
+  <data name="Tag_ROCKETSSECRETMACHINE" xml:space="preserve">
+    <value>ロケット団秘密メカ</value>
+  </data>
   <data name="Tag_TAGTEAM" xml:space="preserve">
     <value>TAG TEAM</value>
   </data>
-  <data name="Tag_WAZAMACHINE" xml:space="preserve">
+  <data name="Tag_TECHNICALMACHINE" xml:space="preserve">
     <value>ワザマシン</value>
   </data>
   <data name="TrainerCardType_Item" xml:space="preserve">

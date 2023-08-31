@@ -129,6 +129,9 @@
   <data name="CheckDeck_SameName" xml:space="preserve">
     <value>名前が「{0}」のカードが{1}枚を超えました</value>
   </data>
+  <data name="CommentAppBarButton.Label" xml:space="preserve">
+    <value>コメント</value>
+  </data>
   <data name="Dialog_DeckChangedText" xml:space="preserve">
     <value>デッキの変更を保存しますか？</value>
   </data>

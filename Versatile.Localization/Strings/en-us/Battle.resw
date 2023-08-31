@@ -507,4 +507,19 @@
   <data name="PokemonStatus_Paralyzed" xml:space="preserve">
     <value>Paralyzed</value>
   </data>
+  <data name="Playmat_ShowHide_Choose.Text" xml:space="preserve">
+    <value>Choose</value>
+  </data>
+  <data name="Playmat_ShowHide_Shuffle.Text" xml:space="preserve">
+    <value>Shuffle</value>
+  </data>
+  <data name="ChangeDcControl_NumberBox.Header" xml:space="preserve">
+    <value>Damage Counters:</value>
+  </data>
+  <data name="PlayerSlotKey_Hide" xml:space="preserve">
+    <value>Hide</value>
+  </data>
+  <data name="Playmat_Deck_ShowToOpponent.Text" xml:space="preserve">
+    <value>Show to opponent</value>
+  </data>
 </root>

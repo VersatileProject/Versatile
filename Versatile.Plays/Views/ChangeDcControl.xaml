@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="Versatile.Plays.Views.ChangeDcControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Versatile.Plays.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    Margin="0, -16, 0, 0"
+    mc:Ignorable="d"
+    >
+
+    <Grid
+        Margin="0, 32, 0, 0"
+        ColumnSpacing="16"
+        >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid
+            CornerRadius="4"
+            >
+            <Image
+                Source="/Versatile.Plays/Assets/placeholder.png"
+                Width="80"
+                >
+            </Image>
+            <Image
+                Source="{x:Bind Card.Data.ThumbnailImage}"
+                Width="80"
+                >
+            </Image>
+        </Grid>
+        
+        <StackPanel
+            Grid.Column="1"
+            >
+
+            <NumberBox
+                x:Uid="/Versatile.Localization/Battle/ChangeDcControl_NumberBox"
+                Grid.Row="1"
+                Grid.Column="1"
+                Value="{x:Bind DamageCounters, Mode=TwoWay}"
+                SpinButtonPlacementMode="Inline"
+                Header="Damage Counters:"
+                SmallChange="1"
+                LargeChange="1"
+                Minimum="0"
+                ValueChanged="NumberBox_ValueChanged"
+                />
+            
+            <TextBlock
+                x:Name="DCChangedTextBlock"
+                Grid.Row="0"
+                Grid.Column="1"
+                />
+        </StackPanel>
+    </Grid>
+</UserControl>

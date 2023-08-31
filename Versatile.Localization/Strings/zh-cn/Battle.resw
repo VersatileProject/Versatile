@@ -286,7 +286,7 @@
     <value>能力</value>
   </data>
   <data name="Playmat_Pokemon_ChangeDC.Label" xml:space="preserve">
-    <value>调整伤害指示物</value>
+    <value>调整伤害指示物...</value>
   </data>
   <data name="Playmat_Pokemon_Choose.Label" xml:space="preserve">
     <value>选择</value>
@@ -512,5 +512,14 @@
   </data>
   <data name="PokemonStatus_Paralyzed" xml:space="preserve">
     <value>麻痹</value>
+  </data>
+  <data name="ChangeDcControl_NumberBox.Header" xml:space="preserve">
+    <value>伤害指示物：</value>
+  </data>
+  <data name="Playmat_ShowHide_Choose.Text" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="Playmat_ShowHide_Shuffle.Text" xml:space="preserve">
+    <value>洗切</value>
   </data>
 </root>

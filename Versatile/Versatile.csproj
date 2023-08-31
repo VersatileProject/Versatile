@@ -14,7 +14,7 @@
 	  <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
     <WindowsPackageType>None</WindowsPackageType>
-    <WindowsAppSDKSelfContained Condition="'$(Configuration)' == 'Release'">true</WindowsAppSDKSelfContained>
+    <WindowsAppSDKSelfContained Condition="'$(Configuration)' == 'Release'">false</WindowsAppSDKSelfContained>
     <AssemblyVersion>0.1.0</AssemblyVersion>
   </PropertyGroup>
 
@@ -54,7 +54,6 @@
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
   </PropertyGroup>
-
 
   <Target Name="TestRelease">
     <MSBuild Projects="$(ProjectPath)" Properties="Configuration=release" />

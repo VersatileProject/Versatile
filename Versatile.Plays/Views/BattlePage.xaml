@@ -71,12 +71,12 @@
                     <AppBarButton Icon="Pictures" x:Uid="/Versatile.Localization/Battle/Toolbar_Actions">
                         <AppBarButton.Flyout>
                             <MenuFlyout Placement="BottomEdgeAlignedLeft">
-                                <MenuFlyoutItem Visibility="Collapsed" x:Uid="/Versatile.Localization/Battle/Toolbar_ShuffleAndDraw" Click="ShuffleDeckAndDraw_Click" />
-                                <MenuFlyoutItem Visibility="Collapsed" x:Uid="/Versatile.Localization/Battle/Toolbar_RevealAndRedraw" Click="RedrawHand_Click" />
-                                <MenuFlyoutItem Visibility="Collapsed" x:Uid="/Versatile.Localization/Battle/Toolbar_SetPrize" Click="SetPrize_Click" />
-                                <MenuFlyoutItem Visibility="Collapsed" x:Uid="/Versatile.Localization/Battle/Toolbar_RevealPokemon" Click="RevealPokemon_Click" />
+                                <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Toolbar_ShuffleAndDraw" Click="ShuffleDeckAndDraw_Click" />
+                                <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Toolbar_RevealAndRedraw" Click="RedrawHand_Click" />
+                                <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Toolbar_SetPrize" Click="SetPrize_Click" />
+                                <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Toolbar_RevealPokemon" Click="RevealPokemon_Click" />
 
-                                <MenuFlyoutSeparator Visibility="Collapsed" />
+                                <MenuFlyoutSeparator />
 
                                 <MenuFlyoutItem x:Uid="/Versatile.Localization/Battle/Toolbar_Forfeit" Click="Forfeit_Click">
                                     <MenuFlyoutItem.Icon>

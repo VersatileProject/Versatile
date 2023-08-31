@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -7,6 +8,7 @@ using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Versatile.Common;
+using Versatile.CommonUI.Services;
 using Versatile.Plays.Battles;
 using Versatile.Plays.Battles.Commands;
 using Versatile.Plays.Services;
@@ -346,9 +348,6 @@ public sealed partial class PlayerPlaymat : UserControl
                 case PlayerSlotKey.Hand:
                     ShuffleHand_Click(null, null);
                     break;
-                case PlayerSlotKey.Hide:
-                    CreateCommand(new ShuffleSlotCommand(slotKey));
-                    break;
                 default:
                     CreateCommand(new ChooseSlotCommand(slotKey, !Player.IsMe));
                     break;
@@ -376,6 +375,7 @@ public sealed partial class PlayerPlaymat : UserControl
                 PlayerSlotKey.Hand => MyHandMenuFlyout,
                 >= PlayerSlotKey.Active and <= PlayerSlotKey.Bench10 => MyPokemonFlyout,
                 >= PlayerSlotKey.Prize1 and <= PlayerSlotKey.Prize6 => MyPrizeMenuFlyout,
+                PlayerSlotKey.Show or PlayerSlotKey.Hide => MyShowHideMenuFlyout,
                 _ => null,
             };
         }
@@ -553,8 +553,6 @@ public sealed partial class PlayerPlaymat : UserControl
             SetStatusMenuItem.IsEnabled = false;
         }
 
-
-
         // todo: mvvm
         SetStatusMenuItem.Visibility = SelectedSlot.Type == PlayerSlotKey.Active ? Visibility.Visible : Visibility.Collapsed;
         SetStatusNormalMenuItem.IsEnabled = SelectedSlot.Pokemon.Rotation != PokemonStatus.Normal;
@@ -617,8 +615,71 @@ public sealed partial class PlayerPlaymat : UserControl
     {
         CreateCommand(new ShowToOpponentCommand(SelectedSlot.Type));
     }
-}
 
+    private async void AppBarButton_Click(object sender, RoutedEventArgs e)
+    {
+        var slot = SelectedSlot;
+        if (!slot.Player.IsMe)
+        {
+            return;
+        }
+        if (!slot.Type.IsPokemon())
+        {
+            return;
+        }
+
+        var slotname = slot.GetName();
+        var dc = slot.Pokemon.DamageCounters;
+
+        var dialogService = VersatileApp.GetService<DialogService>();
+        var ctl = new ChangeDcControl() {
+            Card = slot.Cards.FirstOrDefault(),
+            DamageCounters = dc,
+        };
+        var dialogResult = await dialogService.ShowOkCancel(ctl, slotname);
+
+        if (dialogResult != ContentDialogResult.Primary)
+        {
+            return;
+        }
+        if (dc == ctl.DamageCounters)
+        {
+            return;
+        }
+
+        CreateCommand(new ChangeDamageCountersCommand(slot.Type, ctl.DamageCounters));
+    }
+
+    private void ShowHideShuffle_Click(object sender, RoutedEventArgs e)
+    {
+        if (!SelectedSlot.Player.IsMe)
+        {
+            return;
+        }
+
+        if (SelectedSlot.Type is not PlayerSlotKey.Show and not PlayerSlotKey.Hide)
+        {
+            return;
+        }
+
+        CreateCommand(new ShuffleSlotCommand(SelectedSlot.Type));
+    }
+
+    private void ShowHideChoose_Click(object sender, RoutedEventArgs e)
+    {
+        if (!SelectedSlot.Player.IsMe)
+        {
+            return;
+        }
+
+        if (SelectedSlot.Type is not PlayerSlotKey.Show and not PlayerSlotKey.Hide)
+        {
+            return;
+        }
+
+        CreateCommand(new ChooseSlotCommand(SelectedSlot.Type, false));
+    }
+}
 
 public enum BattleSlotLayout
 {

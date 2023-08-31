@@ -113,6 +113,36 @@ public class DialogService
         return result;
     }
 
+    public async Task<ContentDialogResult> ShowOkCancel(string title, string content)
+    {
+        var dialog = new ContentDialog
+        {
+            Title = title,
+            Content = content,
+            PrimaryButtonText = VersatileApp.Localize("Main/Dialog_OkButtonText"),
+            CloseButtonText = VersatileApp.Localize("Main/Dialog_CancelButtonText"),
+            XamlRoot = VersatileApp.GetService<Window>().Content.XamlRoot
+        };
+
+        var result = await dialog.ShowAsync();
+        return result;
+    }
+
+    public async Task<ContentDialogResult> ShowOkCancel(FrameworkElement content, string title)
+    {
+        var dialog = new ContentDialog
+        {
+            Title = title,
+            Content = content,
+            PrimaryButtonText = VersatileApp.Localize("Main/Dialog_OkButtonText"),
+            CloseButtonText = VersatileApp.Localize("Main/Dialog_CancelButtonText"),
+            XamlRoot = VersatileApp.GetService<Window>().Content.XamlRoot
+        };
+
+        var result = await dialog.ShowAsync();
+        return result;
+    }
+
     public async Task<string?> ShowInput(string title, string content)
     {
         var textbox = new TextBox()

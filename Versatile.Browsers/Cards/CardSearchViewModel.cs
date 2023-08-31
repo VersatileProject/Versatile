@@ -30,7 +30,7 @@ public class CardSearchViewModel : ObservableRecipient
         SearchPokemonStages = GetEnumValues<PokemonCardStage>().ToDictionary(x => x, x => VersatileApp.Localize(x, "Card"));
         SearchTrainerTypes = GetEnumValues<TrainerCardType>().ToDictionary(x => x, x => VersatileApp.Localize(x, "Card"));
         SearchEnergyTypes = GetEnumValues<EnergyCardType>().ToDictionary(x => x, x => VersatileApp.Localize(x, "Card"));
-        SearchPokemonAbilities = GetEnumValues<AbilityType>().Where(x => x is not AbilityType.Unknown or AbilityType.Effect or AbilityType.Rule).ToDictionary(x => x, x => VersatileApp.Localize(x, "Card"));
+        SearchPokemonAbilities = GetEnumValues<AbilityType>().Where(x => x is not AbilityType.Unknown and not AbilityType.Effect and not AbilityType.Rule).ToDictionary(x => x, x => VersatileApp.Localize(x, "Card"));
 
         SearchScopes = GetEnumValues<SearchScope>(true).ToDictionary(x => (int)x, x => VersatileApp.Localize(x, "CardBrowser"));
 
