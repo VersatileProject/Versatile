@@ -1,0 +1,61 @@
+name: .NET Core Desktop
+
+on:
+  push:
+    tags:
+      - v**
+
+jobs:
+
+  build:
+
+    runs-on: windows-latest
+    
+    env:
+      Solution_Name: Versatile.sln
+      Project_Name: Versatile
+      Output_Folder: .output
+      Release_Folder: .release
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+
+
+    - name: Restore the application
+      run: msbuild ${{ env.Project_Name }} /t:Restore /p:Configuration=release
+        
+    - name: Build
+      run: msbuild ${{ env.Project_Name }} /p:Configuration=release /p:OutputPath=.\..\${{ env.Output_Folder }}
+
+    - run: |
+        echo "App_Version=${{ github.ref_name }}" >> $env:GITHUB_ENV
+
+    - run: |
+        echo "Package_Name=${{ env.Project_Name }}-${{ env.App_Version }}.zip" >> $env:GITHUB_ENV
+
+    - name: Archive Build
+      run: |
+        mkdir ${{ env.Release_Folder }}
+        dir
+        Compress-Archive .\${{ env.Output_Folder }}\* .\${{ env.Release_Folder }}\${{ env.Package_Name }}
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        name: ${{ env.App_Version }}
+        tag_name: ${{ env.App_Version }}
+        files: |
+          ${{ env.Release_Folder }}/${{ env.Package_Name }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
