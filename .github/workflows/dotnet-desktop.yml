@@ -4,13 +4,16 @@ on:
   push:
     tags:
       - v**
-
+      
 jobs:
 
   build:
 
     runs-on: windows-latest
     
+    permissions:
+      contents: write
+      
     env:
       Solution_Name: Versatile.sln
       Project_Name: Versatile
